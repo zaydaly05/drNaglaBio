@@ -1,408 +1,1143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#0d3d37" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <title>Happy 58th Birthday, Auntie — 21.08.2026</title>
-  <meta name="description" content="A love letter in photos and film for Auntie's 58th birthday." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>د. نجلاء محمد مدبولي عياد — Dr. Naglaa Mohamed Madbouly Ayad</title>
+    <meta name="description" content="A celebration of the remarkable life journey of Dr. Naglaa Mohamed Madbouly Ayad — مسيرة استثنائية في حياة د. نجلاء محمد مدبولي عياد">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           DESIGN TOKENS — LIGHT THEME (DEFAULT)
+        ============================================================ */
+        :root {
+            --bg-base:       #FAF7F2;
+            --bg-warm:       #F5F0E6;
+            --bg-card:       #FFFFFF;
+            --gold-50:       #FDF8EC;
+            --gold-200:      #F0D080;
+            --gold-300:      #D4960F;
+            --gold-400:      #B8780A;
+            --gold-500:      #9A6200;
+            --gold-border:   rgba(184,120,10,0.18);
+            --gold-border-h: rgba(184,120,10,0.42);
+            --text-heading:  #1A1520;
+            --text-body:     #3A3650;
+            --text-sub:      #6B6880;
+            --text-muted:    #9A97A8;
+            --sh-sm:    0 2px 12px rgba(100,80,30,0.07);
+            --sh-md:    0 8px 30px rgba(100,80,30,0.10);
+            --sh-gold:  0 8px 36px rgba(184,120,10,0.16);
+            --sh-gold-lg: 0 12px 50px rgba(184,120,10,0.22);
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-elegant: 'Cormorant Garamond', Georgia, serif;
+            --font-body:    'Inter', system-ui, sans-serif;
+            --font-arabic:  'Cairo', 'Inter', system-ui, sans-serif;
+            --ease:   cubic-bezier(0.4, 0, 0.2, 1);
+            --trans:  all 0.4s var(--ease);
+            --radius-sm: 10px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+        }
+
+        /* ============================================================
+           DARK THEME OVERRIDES
+        ============================================================ */
+        html[data-theme="dark"] {
+            --bg-base:       #0a0f1e;
+            --bg-warm:       #0e1530;
+            --bg-card:       rgba(255,255,255,0.025);
+            --gold-50:       rgba(212,160,23,0.08);
+            --gold-200:      rgba(212,160,23,0.5);
+            --gold-300:      #f5d882;
+            --gold-400:      #d4a017;
+            --gold-500:      #b8860b;
+            --gold-border:   rgba(212,160,23,0.22);
+            --gold-border-h: rgba(212,160,23,0.45);
+            --text-heading:  #ffffff;
+            --text-body:     #cbd5e1;
+            --text-sub:      #94a3b8;
+            --text-muted:    #64748b;
+            --sh-sm:    0 2px 16px rgba(0,0,0,0.4);
+            --sh-md:    0 8px 30px rgba(0,0,0,0.5);
+            --sh-gold:  0 0 40px rgba(212,160,23,0.2);
+            --sh-gold-lg: 0 0 60px rgba(212,160,23,0.3);
+        }
+
+        /* ============================================================
+           BILINGUAL DISPLAY
+        ============================================================ */
+        /* Default: hide all Arabic, show English naturally */
+        .ar { display: none !important; }
+
+        /* Arabic mode: hide English, show Arabic with explicit display per element type */
+        html[lang="ar"] .en { display: none !important; }
+        /* Inline elements */
+        html[lang="ar"] span.ar { display: inline !important; }
+        html[lang="ar"] a.ar    { display: inline !important; }
+        /* Block elements */
+        html[lang="ar"] p.ar,
+        html[lang="ar"] h1.ar,
+        html[lang="ar"] h2.ar,
+        html[lang="ar"] h3.ar,
+        html[lang="ar"] h4.ar,
+        html[lang="ar"] ul.ar,
+        html[lang="ar"] li.ar  { display: block !important; }
+        /* Inline-block */
+        html[lang="ar"] .section-label.ar { display: inline-block !important; }
+        /* Flex */
+        html[lang="ar"] .tl-badge.ar { display: inline-flex !important; }
+
+        /* ============================================================
+           ARABIC / RTL MODE
+        ============================================================ */
+        html[lang="ar"] {
+            direction: rtl;
+        }
+        html[lang="ar"] body {
+            font-family: var(--font-arabic);
+        }
+        html[lang="ar"] .section-title,
+        html[lang="ar"] .tl-inst,
+        html[lang="ar"] .career-name,
+        html[lang="ar"] .lead-title,
+        html[lang="ar"] .footer-name,
+        html[lang="ar"] .info-box h4,
+        html[lang="ar"] .badge-body h4 {
+            font-family: 'Cairo', Georgia, serif;
+        }
+        html[lang="ar"] .hero-name .line1,
+        html[lang="ar"] .hero-name .line2 {
+            font-family: 'Cairo', Georgia, serif;
+        }
+        html[lang="ar"] .hero-roles {
+            font-family: 'Cairo', Georgia, serif;
+            font-style: normal;
+            font-weight: 600;
+        }
+        html[lang="ar"] .quote-body {
+            font-family: 'Cairo', Georgia, serif;
+            font-style: normal;
+        }
+        /* Ornament gradient flip */
+        html[lang="ar"] .hero-ornament .line      { background: linear-gradient(90deg, var(--gold-300), transparent) !important; }
+        html[lang="ar"] .hero-ornament .line:last-child { background: linear-gradient(90deg, transparent, var(--gold-300)) !important; }
+        /* Badge card hover flip */
+        html[lang="ar"] .badge-card:hover { transform: translateX(-5px) !important; }
+        /* Lead number position */
+        html[lang="ar"] .lead-number { left: 1.8rem; right: auto; }
+        /* PhD watermark position */
+        html[lang="ar"] .phd-main::after { left: 20px; right: auto; }
+        /* Timeline column flip */
+        html[lang="ar"] .tl-item:nth-child(odd) .tl-card  { grid-column: 3; text-align: right; }
+        html[lang="ar"] .tl-item:nth-child(odd) .tl-empty { grid-column: 1; }
+        html[lang="ar"] .tl-item:nth-child(even) .tl-card  { grid-column: 1; text-align: right; }
+        html[lang="ar"] .tl-item:nth-child(even) .tl-empty { grid-column: 3; }
+        /* School grid column swap */
+        html[lang="ar"] .school-text { order: 2; }
+        html[lang="ar"] .school-grid > div:nth-child(2) { order: 1; }
+        /* PHD grid column swap */
+        html[lang="ar"] .phd-main { order: 2; }
+        html[lang="ar"] .phd-grid > div:nth-child(2) { order: 1; }
+        /* Nav links direction */
+        html[lang="ar"] .nav { direction: rtl; }
+        /* Footer separator lines */
+        html[lang="ar"] .footer-gems .ln      { background: linear-gradient(90deg, var(--gold-border-h), transparent) !important; }
+        html[lang="ar"] .footer-gems .ln:last-child { background: linear-gradient(90deg, transparent, var(--gold-border-h)) !important; }
+
+        /* ============================================================
+           RESET & BASE
+        ============================================================ */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: var(--font-body); background: var(--bg-base); color: var(--text-body); overflow-x: hidden; line-height: 1.65; transition: background 0.5s var(--ease), color 0.5s var(--ease); }
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: var(--bg-warm); }
+        ::-webkit-scrollbar-thumb { background: var(--gold-400); border-radius: 3px; }
+        #canvas-bg { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+
+        /* ============================================================
+           ADVANCED EFFECTS
+        ============================================================ */
+        #page-loader { position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.4rem;transition:opacity 0.7s var(--ease),visibility 0.7s var(--ease); }
+        html[data-theme="light"] #page-loader { background:#FAF7F2; }
+        html[data-theme="dark"]  #page-loader { background:#0a0f1e; }
+        #page-loader.hidden { opacity:0;visibility:hidden; }
+        .loader-gem  { color:var(--gold-400);font-size:1.8rem;animation:spin 2s linear infinite;display:inline-block; }
+        .loader-name { font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--text-heading);letter-spacing:0.04em; }
+        html[lang="ar"] .loader-name { font-family:'Cairo',serif; }
+        .loader-bar-wrap { width:180px;height:2px;background:var(--gold-border);border-radius:2px;overflow:hidden; }
+        .loader-bar { height:100%;background:linear-gradient(90deg,var(--gold-300),var(--gold-400));width:0%;border-radius:2px;animation:loader-fill 1.5s cubic-bezier(0.4,0,0.2,1) forwards 0.3s; }
+        @keyframes loader-fill { to { width:100%; } }
+        @keyframes spin { to { transform:rotate(360deg); } }
+        #progress-bar { position:fixed;top:0;left:0;height:3px;z-index:9998;width:0%;pointer-events:none;background:linear-gradient(90deg,var(--gold-200),var(--gold-400),var(--gold-300)); }
+        #progress-bar::after { content:'';position:absolute;right:-4px;top:50%;transform:translateY(-50%);width:9px;height:9px;border-radius:50%;background:var(--gold-400);box-shadow:0 0 10px var(--gold-400); }
+        .orb { position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(90px);animation:orb-drift linear infinite; }
+        html[data-theme="light"] .orb { opacity:0.22; }
+        html[data-theme="dark"]  .orb { opacity:0.1; }
+        @keyframes orb-drift { 0%{transform:translate(0,0) scale(1);}33%{transform:translate(30px,-20px) scale(1.06);}66%{transform:translate(-20px,15px) scale(0.94);}100%{transform:translate(0,0) scale(1);} }
+        .section-divider { width:100%;height:1px;background:linear-gradient(90deg,transparent 0%,var(--gold-border-h) 30%,var(--gold-400) 50%,var(--gold-border-h) 70%,transparent 100%);position:relative;overflow:hidden;opacity:0.6; }
+        .section-divider::after { content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.9),transparent);animation:divider-shine 4s ease-in-out infinite; }
+        html[data-theme="dark"] .section-divider::after { background:linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent); }
+        @keyframes divider-shine { 0%{transform:translateX(-120%);}60%,100%{transform:translateX(120%);} }
+        .career-card,.lead-card,.achieve-card,.tl-card,.badge-card,.conf-card { --mx:50%;--my:50%; }
+        .career-card::before,.lead-card::before,.achieve-card::before,.badge-card::before,.conf-card::before { content:'';position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(circle 120px at var(--mx) var(--my),rgba(212,160,23,0.05),transparent 80%);opacity:0;transition:opacity 0.3s; }
+        .career-card:hover::before,.lead-card:hover::before,.achieve-card:hover::before,.badge-card:hover::before,.conf-card:hover::before { opacity:1; }
+        html[data-theme="dark"] .career-card:hover::before,html[data-theme="dark"] .lead-card:hover::before,html[data-theme="dark"] .achieve-card:hover::before,html[data-theme="dark"] .badge-card:hover::before,html[data-theme="dark"] .conf-card:hover::before { background:radial-gradient(circle 120px at var(--mx) var(--my),rgba(212,160,23,0.1),transparent 80%); }
+        .career-card>*,.lead-card>*,.achieve-card>*,.badge-card>*,.conf-card>* { position:relative;z-index:1; }
+        .theme-toggle::before { content:'';position:absolute;inset:-7px;border-radius:50%;border:1px solid var(--gold-border-h);animation:toggle-ring 2.8s ease-in-out infinite;pointer-events:none; }
+        @keyframes toggle-ring { 0%,100%{opacity:0.7;transform:scale(1);}60%{opacity:0;transform:scale(1.5);} }
+        .tw-cursor { display:inline-block;width:2px;height:0.9em;background:var(--gold-400);margin-left:4px;animation:cur-blink 0.9s step-end infinite;vertical-align:middle;border-radius:1px; }
+        @keyframes cur-blink { 0%,100%{opacity:1;}50%{opacity:0;} }
+        .nav-links a.active { color:var(--gold-400); }
+        .nav-links a.active::after { transform:scaleX(1); }
+        .hero-badge,.hero-name,.hero-roles,.hero-ornament,.hero-pillars { will-change:transform; }
+        .section-label { transition:letter-spacing 0.5s var(--ease),opacity 0.5s var(--ease); }
+        .section-label.reveal:not(.in-view) { letter-spacing:0.4em; }
+        html[lang="ar"] .section-label.reveal:not(.in-view) { letter-spacing:0.15em; }
+        .section-label.in-view { letter-spacing:0.25em; }
+        html[lang="ar"] .section-label.in-view { letter-spacing:0.1em; }
+
+        /* ============================================================
+           THEME TOGGLE
+        ============================================================ */
+        .theme-toggle { position:fixed;bottom:2rem;right:2rem;z-index:1000;width:54px;height:54px;border-radius:50%;background:var(--bg-card);border:1.5px solid var(--gold-border-h);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-gold);transition:var(--trans);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px); }
+        .theme-toggle:hover { transform:scale(1.12);box-shadow:var(--sh-gold-lg); }
+        .theme-icon { position:absolute;width:22px;height:22px;color:var(--gold-400);transition:opacity 0.35s var(--ease),transform 0.35s var(--ease); }
+        .theme-icon.moon { opacity:1;transform:rotate(0deg) scale(1); }
+        .theme-icon.sun  { opacity:0;transform:rotate(90deg) scale(0); }
+        html[data-theme="dark"] .theme-icon.moon { opacity:0;transform:rotate(-90deg) scale(0); }
+        html[data-theme="dark"] .theme-icon.sun  { opacity:1;transform:rotate(0deg) scale(1); }
+        html[lang="ar"] .theme-toggle { right:auto;left:2rem; }
+
+        /* Language Toggle Button */
+        .lang-btn { position:fixed;bottom:2rem;right:6rem;z-index:1000;height:54px;min-width:60px;border-radius:27px;background:var(--bg-card);border:1.5px solid var(--gold-border-h);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:0 1.2rem;box-shadow:var(--sh-gold);transition:var(--trans);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:var(--gold-400);font-weight:700;font-size:0.85rem;font-family:var(--font-body); }
+        .lang-btn:hover { transform:scale(1.06);box-shadow:var(--sh-gold-lg);background:var(--gold-50); }
+        html[lang="ar"] .lang-btn { right:auto;left:6rem;font-family:'Cairo',sans-serif; }
+        .lang-btn svg { width:16px;height:16px;flex-shrink:0; }
+
+        /* ============================================================
+           NAVIGATION
+        ============================================================ */
+        .nav { position:fixed;inset:0 0 auto 0;z-index:999;padding:1.2rem 3rem;display:flex;align-items:center;justify-content:space-between;transition:var(--trans); }
+        html[data-theme="light"] .nav.scrolled { background:rgba(250,247,242,0.95);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--gold-border);box-shadow:var(--sh-sm);padding:0.8rem 3rem; }
+        html[data-theme="dark"]  .nav.scrolled { background:rgba(8,12,25,0.94);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--gold-border);box-shadow:var(--sh-sm);padding:0.8rem 3rem; }
+        .nav-logo { font-family:var(--font-display);font-size:1rem;color:var(--gold-400);font-weight:700;letter-spacing:0.04em; }
+        html[lang="ar"] .nav-logo { font-family:'Cairo',serif; }
+        .nav-links { display:flex;gap:2.2rem;list-style:none; }
+        .nav-links a { color:var(--text-sub);text-decoration:none;font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;transition:var(--trans);position:relative; }
+        html[lang="ar"] .nav-links a { letter-spacing:0;font-size:0.88rem;font-family:'Cairo',sans-serif; }
+        .nav-links a::after { content:'';position:absolute;bottom:-3px;left:0;right:0;height:1.5px;background:var(--gold-400);transform:scaleX(0);transition:var(--trans); }
+        .nav-links a:hover { color:var(--gold-400); }
+        .nav-links a:hover::after { transform:scaleX(1); }
+        .nav-hamburger { display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px; }
+        .nav-hamburger span { display:block;width:24px;height:2px;background:var(--gold-400);border-radius:2px;transition:var(--trans); }
+
+        /* ============================================================
+           HERO
+        ============================================================ */
+        .hero { position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem 1.5rem;transition:background 0.5s var(--ease); }
+        html[data-theme="light"] .hero { background:radial-gradient(ellipse 80% 65% at 50% 40%,rgba(248,232,180,0.5) 0%,transparent 65%),radial-gradient(ellipse 50% 40% at 15% 85%,rgba(230,210,150,0.2) 0%,transparent 60%),linear-gradient(180deg,#FAF7F2 0%,#F5EDD8 50%,#FAF7F2 100%); }
+        html[data-theme="dark"]  .hero { background:radial-gradient(ellipse 70% 60% at 50% 45%,rgba(212,160,23,0.07) 0%,transparent 70%),radial-gradient(ellipse 40% 30% at 20% 80%,rgba(22,32,80,0.8) 0%,transparent 60%),linear-gradient(180deg,#0a0f1e 0%,#0a0f1e 100%); }
+        .hero-badge { display:inline-flex;align-items:center;gap:0.6rem;border:1px solid var(--gold-border-h);border-radius:50px;padding:0.5rem 1.5rem;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-400);font-weight:600;margin-bottom:2.5rem;animation:fadeDown 0.9s var(--ease) 0.1s both; }
+        html[lang="ar"] .hero-badge { letter-spacing:0.05em;font-family:'Cairo',sans-serif;text-transform:none; }
+        html[data-theme="light"] .hero-badge { background:rgba(248,235,180,0.45);box-shadow:0 2px 12px rgba(184,120,10,0.08); }
+        html[data-theme="dark"]  .hero-badge { background:rgba(212,160,23,0.07); }
+        .hero-name { font-family:var(--font-display);font-weight:700;line-height:1.08;margin-bottom:1.2rem;animation:fadeUp 0.9s var(--ease) 0.3s both; }
+        .hero-name .line1 { display:block;font-size:clamp(2.2rem,5.5vw,5rem);color:var(--text-heading); }
+        .hero-name .line2 { display:block;font-size:clamp(2.5rem,6.5vw,5.8rem);background:linear-gradient(120deg,var(--gold-300) 0%,var(--gold-400) 35%,var(--gold-200) 60%,var(--gold-300) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s linear infinite; }
+        .hero-roles { font-family:var(--font-elegant);font-size:clamp(1rem,2vw,1.45rem);font-style:italic;color:var(--gold-400);letter-spacing:0.08em;margin-bottom:3rem;animation:fadeUp 0.9s var(--ease) 0.5s both;min-height:2em; }
+        .hero-ornament { display:flex;align-items:center;gap:1rem;justify-content:center;margin-bottom:3rem;animation:fadeUp 0.9s var(--ease) 0.65s both; }
+        .hero-ornament .line { height:1px;width:90px;background:linear-gradient(90deg,transparent,var(--gold-300)); }
+        .hero-ornament .line:last-child { background:linear-gradient(90deg,var(--gold-300),transparent); }
+        .hero-ornament .gem { color:var(--gold-300);font-size:0.9rem; }
+        .hero-pillars { display:flex;gap:3.5rem;flex-wrap:wrap;justify-content:center;animation:fadeUp 0.9s var(--ease) 0.8s both; }
+        .hero-pillar { text-align:center;position:relative; }
+        .pillar-val { font-family:var(--font-display);font-size:2.4rem;font-weight:700;color:var(--gold-400);line-height:1; }
+        .pillar-lbl { font-size:0.7rem;color:var(--text-muted);letter-spacing:0.12em;text-transform:uppercase;margin-top:0.3rem; }
+        html[lang="ar"] .pillar-lbl { letter-spacing:0;font-size:0.8rem; }
+        .hero-pillar:not(:last-child)::after { content:'';position:absolute;top:15%;right:-1.75rem;height:70%;width:1px;background:linear-gradient(180deg,transparent,var(--gold-border-h),transparent); }
+        .hero-scroll { position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);cursor:pointer;animation:bobble 2.2s ease-in-out infinite;color:var(--gold-400);opacity:0.5; }
+
+        /* ============================================================
+           SECTIONS
+        ============================================================ */
+        section { position:relative;z-index:1; }
+        .container { max-width:1200px;margin:0 auto;padding:0 2rem; }
+        .section-head { text-align:center;margin-bottom:5rem; }
+        .section-label { display:inline-block;font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-400);font-weight:700;margin-bottom:1rem; }
+        html[lang="ar"] .section-label { font-family:'Cairo',sans-serif;letter-spacing:0.05em;text-transform:none;font-size:0.82rem; }
+        .section-title { font-family:var(--font-display);font-size:clamp(1.9rem,4vw,3rem);font-weight:700;color:var(--text-heading);line-height:1.15;margin-bottom:1.2rem; }
+        html[lang="ar"] .section-title { font-family:'Cairo',Georgia,serif;line-height:1.4; }
+        .section-title .gold { background:linear-gradient(120deg,var(--gold-400),var(--gold-300));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+        .section-desc { font-size:1rem;color:var(--text-sub);max-width:560px;margin:0 auto;line-height:1.85; }
+        html[lang="ar"] .section-desc { font-family:'Cairo',sans-serif;line-height:2; }
+
+        /* INTRO */
+        .intro-section { padding:7rem 0;position:relative; }
+        html[data-theme="light"] .intro-section { background:linear-gradient(180deg,#FAF7F2 0%,#F5F0E6 100%); }
+        html[data-theme="dark"]  .intro-section { background:linear-gradient(180deg,#0a0f1e 0%,#0e1530 100%); }
+        .intro-section::before { content:'';position:absolute;inset:0;pointer-events:none; }
+        html[data-theme="light"] .intro-section::before { background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(248,235,180,0.3) 0%,transparent 70%); }
+        html[data-theme="dark"]  .intro-section::before { background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(212,160,23,0.04) 0%,transparent 70%); }
+        .quote-wrap { text-align:center;max-width:840px;margin:0 auto;padding:0 2rem; }
+        .big-quote { font-family:var(--font-display);font-size:8rem;line-height:0.35;color:var(--gold-300);display:block;margin-bottom:0.5rem; }
+        html[data-theme="light"] .big-quote { opacity:0.45; }
+        html[data-theme="dark"]  .big-quote { opacity:0.18; }
+        .quote-body { font-family:var(--font-elegant);font-size:clamp(1.3rem,2.5vw,2rem);font-style:italic;color:var(--text-heading);line-height:1.6;margin-bottom:2rem; }
+        html[lang="ar"] .quote-body { font-family:'Cairo',Georgia,serif;font-style:normal;line-height:1.9; }
+        .quote-attr { font-size:0.75rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-400);font-weight:600; }
+        html[lang="ar"] .quote-attr { font-family:'Cairo',sans-serif;letter-spacing:0.05em;text-transform:none; }
+
+        /* SCHOOL */
+        html[data-theme="light"] .school-section { background:#FAF7F2; }
+        html[data-theme="dark"]  .school-section { background:#0a0f1e; }
+        .school-section { padding:9rem 0; }
+        .school-grid { display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center; }
+        .school-text h3 { font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;color:var(--text-heading);line-height:1.2;margin-bottom:0.6rem; }
+        html[lang="ar"] .school-text h3 { font-family:'Cairo',serif;line-height:1.4; }
+        .school-location { font-size:0.85rem;letter-spacing:0.1em;color:var(--gold-400);text-transform:uppercase;margin-bottom:1.4rem;font-weight:700; }
+        html[lang="ar"] .school-location { font-family:'Cairo',sans-serif;letter-spacing:0;text-transform:none; }
+        .school-text p { font-size:0.96rem;color:var(--text-body);line-height:1.88;margin-bottom:2rem; }
+        html[lang="ar"] .school-text p { font-family:'Cairo',sans-serif;line-height:2; }
+        .badge-card { display:flex;gap:1rem;align-items:flex-start;background:var(--bg-card);border:1px solid var(--gold-border);border-radius:var(--radius-sm);padding:1.4rem 1.6rem;transition:var(--trans);margin-bottom:1rem;box-shadow:var(--sh-sm);position:relative;overflow:hidden; }
+        .badge-card:hover { border-color:var(--gold-border-h);box-shadow:var(--sh-gold);transform:translateX(5px); }
+        .badge-icon { font-size:1.5rem;flex-shrink:0;margin-top:2px; }
+        .badge-body h4 { font-size:0.92rem;font-weight:700;color:var(--text-heading);margin-bottom:0.3rem; }
+        .badge-body p { font-size:0.83rem;color:var(--text-sub);line-height:1.65; }
+        html[lang="ar"] .badge-body p { font-family:'Cairo',sans-serif;line-height:1.9; }
+        .photo-grid { display:grid;grid-template-columns:1fr 1fr;gap:1rem; }
+        .photo-grid .photo-slot:first-child { grid-column:1 / -1; }
+        .photo-slot { border-radius:var(--radius-md);border:1.5px dashed var(--gold-border-h);aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.6rem;font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;transition:var(--trans); }
+        html[data-theme="light"] .photo-slot { background:linear-gradient(135deg,#FDF8EC,#FFFFFF);color:rgba(184,120,10,0.5); }
+        html[data-theme="dark"]  .photo-slot { background:rgba(255,255,255,0.02);color:rgba(212,160,23,0.55); }
+        .photo-slot svg { width:32px;height:32px;opacity:0.4; }
+        .photo-slot:hover { border-color:var(--gold-border-h); }
+        html[data-theme="light"] .photo-slot:hover { background:#FDF8EC; }
+        html[data-theme="dark"]  .photo-slot:hover { background:rgba(212,160,23,0.05); }
+        .photo-caption { text-align:center;font-size:0.73rem;color:var(--text-muted);font-style:italic;margin-top:0.8rem; }
+        html[lang="ar"] .photo-caption { font-family:'Cairo',sans-serif;font-style:normal; }
+
+        /* TIMELINE */
+        .education-section { padding:9rem 0; }
+        html[data-theme="light"] .education-section { background:linear-gradient(180deg,#F5F0E6 0%,#EDE6D6 50%,#F5F0E6 100%); }
+        html[data-theme="dark"]  .education-section { background:linear-gradient(180deg,#0e1530 0%,#111d40 50%,#0e1530 100%); }
+        .timeline { position:relative;max-width:860px;margin:0 auto; }
+        .timeline::before { content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(180deg,transparent 0%,var(--gold-border-h) 10%,var(--gold-400) 50%,var(--gold-border-h) 90%,transparent 100%);transform:translateX(-50%);opacity:0.7; }
+        .tl-item { display:grid;grid-template-columns:1fr 60px 1fr;gap:1.5rem;align-items:start;margin-bottom:4rem; }
+        .tl-item:nth-child(odd) .tl-card  { grid-column:1;text-align:right; }
+        .tl-item:nth-child(odd) .tl-empty { grid-column:3; }
+        .tl-item:nth-child(even) .tl-card  { grid-column:3; }
+        .tl-item:nth-child(even) .tl-empty { grid-column:1; }
+        .tl-node { grid-column:2;grid-row:1;display:flex;justify-content:center;padding-top:1.2rem; }
+        .tl-dot { width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--gold-200),var(--gold-400));display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;position:relative;z-index:2; }
+        html[data-theme="light"] .tl-dot { box-shadow:0 0 0 5px rgba(184,120,10,0.1),var(--sh-gold); }
+        html[data-theme="dark"]  .tl-dot { box-shadow:0 0 0 5px rgba(212,160,23,0.1),var(--sh-gold); animation:glow-pulse-dark 2.5s ease-in-out infinite; }
+        @keyframes glow-pulse { 0%,100%{box-shadow:0 0 0 5px rgba(184,120,10,0.08),0 6px 24px rgba(184,120,10,0.15);}50%{box-shadow:0 0 0 5px rgba(184,120,10,0.18),0 8px 32px rgba(184,120,10,0.3);} }
+        @keyframes glow-pulse-dark { 0%,100%{box-shadow:0 0 0 5px rgba(212,160,23,0.1),0 0 20px rgba(212,160,23,0.25);}50%{box-shadow:0 0 0 5px rgba(212,160,23,0.2),0 0 35px rgba(212,160,23,0.5);} }
+        .tl-card { background:var(--bg-card);border:1px solid var(--gold-border);border-radius:var(--radius-md);padding:2rem;transition:var(--trans);position:relative;overflow:hidden;box-shadow:var(--sh-sm); }
+        .tl-card::before { content:'';position:absolute;inset:0;opacity:0;transition:var(--trans); }
+        html[data-theme="light"] .tl-card::before { background:linear-gradient(135deg,rgba(248,235,180,0.3) 0%,transparent 60%); }
+        html[data-theme="dark"]  .tl-card::before { background:linear-gradient(135deg,rgba(212,160,23,0.05) 0%,transparent 60%); }
+        .tl-card:hover { border-color:var(--gold-border-h);transform:translateY(-5px);box-shadow:var(--sh-gold); }
+        .tl-card:hover::before { opacity:1; }
+        .tl-era { font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-400);font-weight:700;margin-bottom:0.5rem; }
+        html[lang="ar"] .tl-era { font-family:'Cairo',sans-serif;letter-spacing:0;text-transform:none;font-size:0.8rem; }
+        .tl-inst { font-family:var(--font-display);font-size:1.2rem;font-weight:600;color:var(--text-heading);margin-bottom:0.3rem;line-height:1.3; }
+        html[lang="ar"] .tl-inst { font-family:'Cairo',serif;line-height:1.5; }
+        .tl-deg { font-size:0.85rem;color:var(--gold-400);font-style:italic;margin-bottom:0.9rem; }
+        html[lang="ar"] .tl-deg { font-family:'Cairo',sans-serif;font-style:normal; }
+        .tl-desc { font-size:0.87rem;color:var(--text-sub);line-height:1.78; }
+        html[lang="ar"] .tl-desc { font-family:'Cairo',sans-serif;line-height:2; }
+        .tl-badge { display:inline-flex;align-items:center;gap:0.35rem;background:var(--gold-50);border:1px solid var(--gold-border-h);border-radius:20px;padding:0.3rem 0.9rem;font-size:0.72rem;color:var(--gold-500);font-weight:600;margin-top:1rem; }
+        html[lang="ar"] .tl-badge { font-family:'Cairo',sans-serif;font-size:0.82rem; }
+
+        /* PHD */
+        .phd-section { padding:9rem 0; }
+        html[data-theme="light"] .phd-section { background:#FAF7F2; }
+        html[data-theme="dark"]  .phd-section { background:#0a0f1e; }
+        .phd-grid { display:grid;grid-template-columns:1.1fr 0.9fr;gap:3rem; }
+        .phd-main { border:1px solid var(--gold-border-h);border-radius:var(--radius-lg);padding:3rem;position:relative;overflow:hidden;box-shadow:var(--sh-md); }
+        html[data-theme="light"] .phd-main { background:linear-gradient(135deg,#FDF8EC 0%,#FFFFFF 100%); }
+        html[data-theme="dark"]  .phd-main { background:linear-gradient(135deg,rgba(212,160,23,0.07) 0%,rgba(10,15,30,0.95) 100%); }
+        .phd-main::after { content:'PhD';position:absolute;top:-10px;right:20px;font-family:var(--font-display);font-size:7rem;font-weight:900;color:rgba(184,120,10,0.06);line-height:1;pointer-events:none; }
+        html[data-theme="dark"] .phd-main::after { color:rgba(212,160,23,0.05); }
+        html[lang="ar"] .phd-main::after { content:'دكتوراه';font-family:'Cairo',serif;font-size:3.5rem;top:10px; }
+        .achieve-list { list-style:none;display:flex;flex-direction:column;gap:1.1rem; }
+        .achieve-list li { display:flex;gap:0.8rem;align-items:flex-start;font-size:0.91rem;color:var(--text-body);line-height:1.72; }
+        html[lang="ar"] .achieve-list li { font-family:'Cairo',sans-serif;line-height:2; }
+        .achieve-list li .bullet { color:var(--gold-400);font-size:0.55rem;margin-top:0.55rem;flex-shrink:0; }
+        .achieve-list strong { color:var(--gold-500);font-weight:700; }
+        html[data-theme="dark"] .achieve-list strong { color:var(--gold-300); }
+        .conf-grid { display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem; }
+        .conf-card { background:var(--bg-card);border:1px solid var(--gold-border);border-radius:var(--radius-sm);padding:1.4rem;text-align:center;transition:var(--trans);box-shadow:var(--sh-sm);position:relative;overflow:hidden; }
+        .conf-card:hover { border-color:var(--gold-border-h);transform:translateY(-4px);box-shadow:var(--sh-gold); }
+        .conf-flag { font-size:2.2rem;margin-bottom:0.5rem; }
+        .conf-name { font-size:0.88rem;font-weight:700;color:var(--text-heading); }
+        html[lang="ar"] .conf-name { font-family:'Cairo',sans-serif; }
+        .conf-sub { font-size:0.72rem;color:var(--text-muted);margin-top:0.25rem; }
+        html[lang="ar"] .conf-sub { font-family:'Cairo',sans-serif;font-size:0.8rem; }
+        .info-box { background:var(--gold-50);border:1px solid var(--gold-border);border-radius:var(--radius-md);padding:1.6rem;margin-bottom:1rem;box-shadow:var(--sh-sm); }
+        .info-box-label { font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-400);font-weight:700;margin-bottom:0.5rem; }
+        html[lang="ar"] .info-box-label { font-family:'Cairo',sans-serif;letter-spacing:0;text-transform:none;font-size:0.8rem; }
+        .info-box h4 { font-size:0.95rem;font-weight:700;color:var(--text-heading);margin-bottom:0.4rem; }
+        html[lang="ar"] .info-box h4 { font-family:'Cairo',serif; }
+        .info-box p { font-size:0.83rem;color:var(--text-sub);line-height:1.7; }
+        html[lang="ar"] .info-box p { font-family:'Cairo',sans-serif;line-height:2; }
+
+        /* CAREER */
+        .career-section { padding:9rem 0; }
+        html[data-theme="light"] .career-section { background:linear-gradient(180deg,#F5F0E6 0%,#EDE6D6 50%,#F5F0E6 100%); }
+        html[data-theme="dark"]  .career-section { background:linear-gradient(180deg,#0a0f1e 0%,#0e1530 50%,#0a0f1e 100%); }
+        .career-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.8rem; }
+        .career-card { background:var(--bg-card);border:1px solid var(--gold-border);border-radius:var(--radius-lg);padding:2.5rem 2rem;text-align:center;transition:var(--trans);position:relative;overflow:hidden;box-shadow:var(--sh-sm); }
+        .career-card::after { content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold-300),transparent);transform:scaleX(0);transition:var(--trans); }
+        .career-card:hover { border-color:var(--gold-border-h);transform:translateY(-8px);box-shadow:var(--sh-gold); }
+        .career-card:hover::after { transform:scaleX(1); }
+        .career-icon-wrap { width:68px;height:68px;border-radius:18px;border:1px solid var(--gold-border-h);display:flex;align-items:center;justify-content:center;font-size:1.9rem;margin:0 auto 1.5rem; }
+        html[data-theme="light"] .career-icon-wrap { background:linear-gradient(135deg,#FDF8EC,rgba(248,235,180,0.5));box-shadow:0 4px 16px rgba(184,120,10,0.08); }
+        html[data-theme="dark"]  .career-icon-wrap { background:linear-gradient(135deg,rgba(212,160,23,0.18),rgba(212,160,23,0.06)); }
+        .career-name { font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--text-heading);margin-bottom:0.4rem;line-height:1.35; }
+        html[lang="ar"] .career-name { font-family:'Cairo',serif;line-height:1.5; }
+        .career-role { font-size:0.8rem;color:var(--gold-400);font-style:italic;font-weight:600;margin-bottom:1rem; }
+        html[lang="ar"] .career-role { font-family:'Cairo',sans-serif;font-style:normal; }
+        .career-body { font-size:0.85rem;color:var(--text-sub);line-height:1.78; }
+        html[lang="ar"] .career-body { font-family:'Cairo',sans-serif;line-height:2; }
+
+        /* LEADERSHIP */
+        .leadership-section { padding:9rem 0; }
+        html[data-theme="light"] .leadership-section { background:#FAF7F2; }
+        html[data-theme="dark"]  .leadership-section { background:#0a0f1e; }
+        .leadership-grid { display:grid;grid-template-columns:1fr 1fr;gap:2rem; }
+        .lead-card { border:1px solid var(--gold-border);border-radius:var(--radius-lg);padding:2.8rem;position:relative;overflow:hidden;transition:var(--trans);box-shadow:var(--sh-sm); }
+        html[data-theme="light"] .lead-card { background:linear-gradient(145deg,#FFFBF0 0%,#FFFFFF 100%); }
+        html[data-theme="dark"]  .lead-card { background:linear-gradient(135deg,rgba(212,160,23,0.055) 0%,rgba(10,15,30,0.95) 100%); }
+        .lead-card:hover { border-color:var(--gold-border-h);box-shadow:var(--sh-gold-lg);transform:translateY(-5px); }
+        .lead-card::before { content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-200),var(--gold-400),var(--gold-200));transform:scaleX(0);transform-origin:left;transition:var(--trans); }
+        .lead-card:hover::before { transform:scaleX(1); }
+        .lead-number { position:absolute;top:1.2rem;right:1.8rem;font-family:var(--font-display);font-size:4.5rem;font-weight:900;line-height:1; }
+        html[data-theme="light"] .lead-number { color:rgba(184,120,10,0.06); }
+        html[data-theme="dark"]  .lead-number { color:rgba(212,160,23,0.06); }
+        .lead-icon { font-size:2.4rem;margin-bottom:1.4rem; }
+        .lead-title { font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--text-heading);margin-bottom:0.5rem;line-height:1.3; }
+        html[lang="ar"] .lead-title { font-family:'Cairo',serif;line-height:1.5; }
+        .lead-subtitle { font-size:0.78rem;color:var(--gold-400);font-style:italic;font-weight:600;margin-bottom:1rem; }
+        html[lang="ar"] .lead-subtitle { font-family:'Cairo',sans-serif;font-style:normal; }
+        .lead-body { font-size:0.86rem;color:var(--text-sub);line-height:1.8; }
+        html[lang="ar"] .lead-body { font-family:'Cairo',sans-serif;line-height:2; }
+
+        /* ACHIEVEMENTS */
+        .achievements-section { padding:9rem 0; }
+        html[data-theme="light"] .achievements-section { background:linear-gradient(180deg,#F5F0E6 0%,#EDE6D6 50%,#F5F0E6 100%); }
+        html[data-theme="dark"]  .achievements-section { background:linear-gradient(180deg,#0a0f1e 0%,#0e1530 50%,#0a0f1e 100%); }
+        .achieve-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.4rem; }
+        .achieve-card { background:var(--bg-card);border:1px solid var(--gold-border);border-radius:var(--radius-md);padding:1.8rem;display:flex;flex-direction:column;gap:0.9rem;transition:var(--trans);position:relative;overflow:hidden;box-shadow:var(--sh-sm); }
+        .achieve-card::before { content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold-400),var(--gold-200));transform:scaleX(0);transform-origin:left;transition:var(--trans); }
+        .achieve-card:hover { border-color:var(--gold-border-h);box-shadow:var(--sh-gold);transform:translateY(-4px); }
+        .achieve-card:hover::before { transform:scaleX(1); }
+        .achieve-emoji { font-size:2rem; }
+        .achieve-title { font-size:0.92rem;font-weight:700;color:var(--text-heading);line-height:1.35; }
+        html[lang="ar"] .achieve-title { font-family:'Cairo',serif;line-height:1.5; }
+        .achieve-body { font-size:0.81rem;color:var(--text-sub);line-height:1.72; }
+        html[lang="ar"] .achieve-body { font-family:'Cairo',sans-serif;line-height:2; }
+
+        /* FOOTER */
+        .footer { position:relative;z-index:1;border-top:1px solid var(--gold-border);padding:5rem 0 2.5rem;text-align:center; }
+        html[data-theme="light"] .footer { background:linear-gradient(180deg,#F5F0E6 0%,#E8DFC8 100%); }
+        html[data-theme="dark"]  .footer { background:linear-gradient(180deg,#0a0f1e 0%,#0e1530 100%); }
+        .footer-name { font-family:var(--font-display);font-size:clamp(1.3rem,2.5vw,2rem);color:var(--text-heading);margin-bottom:0.6rem;font-weight:700; }
+        html[lang="ar"] .footer-name { font-family:'Cairo',serif; }
+        .footer-sub { font-size:0.82rem;color:var(--text-sub);letter-spacing:0.12em;margin-bottom:2.5rem; }
+        html[lang="ar"] .footer-sub { font-family:'Cairo',sans-serif;letter-spacing:0; }
+        .footer-gems { display:flex;align-items:center;justify-content:center;gap:0.8rem;margin-bottom:2.5rem; }
+        .footer-gems .ln { height:1px;width:60px;background:linear-gradient(90deg,transparent,var(--gold-border-h)); }
+        .footer-gems .ln:last-child { background:linear-gradient(90deg,var(--gold-border-h),transparent); }
+        .footer-gems .gem { color:var(--gold-400);font-size:0.8rem; }
+        .footer-bottom { font-size:0.72rem;color:var(--text-muted);letter-spacing:0.08em; }
+        html[lang="ar"] .footer-bottom { font-family:'Cairo',sans-serif;letter-spacing:0;font-size:0.82rem; }
+
+        /* SCROLL REVEAL */
+        .reveal   { opacity:0;transform:translateY(32px);transition:opacity 0.75s var(--ease),transform 0.75s var(--ease); }
+        .reveal-l { opacity:0;transform:translateX(-40px);transition:opacity 0.75s var(--ease),transform 0.75s var(--ease); }
+        .reveal-r { opacity:0;transform:translateX(40px);transition:opacity 0.75s var(--ease),transform 0.75s var(--ease); }
+        html[lang="ar"] .reveal-l { transform:translateX(40px); }
+        html[lang="ar"] .reveal-r { transform:translateX(-40px); }
+        .in-view { opacity:1;transform:none !important; }
+        .d1{transition-delay:.08s;}.d2{transition-delay:.16s;}.d3{transition-delay:.24s;}
+        .d4{transition-delay:.32s;}.d5{transition-delay:.40s;}.d6{transition-delay:.48s;}
+        .d7{transition-delay:.56s;}.d8{transition-delay:.64s;}
+
+        /* KEYFRAMES */
+        @keyframes fadeDown { from{opacity:0;transform:translateY(-18px);}to{opacity:1;transform:none;} }
+        @keyframes fadeUp   { from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;} }
+        @keyframes shimmer  { 0%{background-position:0% center;}100%{background-position:200% center;} }
+        @keyframes bobble   { 0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(-10px);} }
+
+        /* RESPONSIVE */
+        @media (max-width:1024px) {
+            .phd-grid{grid-template-columns:1fr;}
+            .school-grid{grid-template-columns:1fr;gap:3rem;}
+            .timeline::before{left:28px;}
+            html[lang="ar"] .timeline::before{left:auto;right:28px;}
+            .tl-item{grid-template-columns:56px 1fr;}
+            html[lang="ar"] .tl-item{grid-template-columns:1fr 56px;}
+            .tl-item:nth-child(odd) .tl-card,.tl-item:nth-child(even) .tl-card{grid-column:2;text-align:left;}
+            html[lang="ar"] .tl-item:nth-child(odd) .tl-card,html[lang="ar"] .tl-item:nth-child(even) .tl-card{grid-column:1;text-align:right;}
+            .tl-item:nth-child(odd) .tl-empty,.tl-item:nth-child(even) .tl-empty{display:none;}
+            .tl-node{grid-column:1;}
+            html[lang="ar"] .tl-node{grid-column:2;}
+        }
+        @media (max-width:768px) {
+            .nav{padding:1rem 1.5rem;}.nav.scrolled{padding:0.7rem 1.5rem;}
+            .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:1.5rem;gap:1.2rem;border-bottom:1px solid var(--gold-border);box-shadow:var(--sh-md);}
+            html[data-theme="light"] .nav-links{background:rgba(250,247,242,0.98);}
+            html[data-theme="dark"]  .nav-links{background:rgba(8,12,25,0.97);}
+            .nav-links.open{display:flex;}
+            .nav-hamburger{display:flex;}
+            .hero-pillars{gap:2rem;}
+            .hero-pillar::after{display:none;}
+            .leadership-grid{grid-template-columns:1fr;}
+            .photo-grid{grid-template-columns:1fr;}
+            .photo-grid .photo-slot:first-child{grid-column:1;}
+            .achieve-grid{grid-template-columns:1fr 1fr;}
+            .theme-toggle{bottom:1.2rem;right:1.2rem;width:48px;height:48px;}
+            html[lang="ar"] .theme-toggle{right:auto;left:1.2rem;}
+            .lang-btn{bottom:1.2rem;right:5rem;height:48px;}
+            html[lang="ar"] .lang-btn{right:auto;left:5rem;}
+        }
+        @media (max-width:480px) {
+            .achieve-grid{grid-template-columns:1fr;}
+            .conf-grid{grid-template-columns:1fr;}
+            .hero-ornament .line{width:50px;}
+            .container{padding:0 1.2rem;}
+            .lang-btn{right:4.5rem;}
+            html[lang="ar"] .lang-btn{right:auto;left:4.5rem;}
+        }
+    </style>
 </head>
 <body>
-  <div class="ambient" aria-hidden="true">
-    <span class="orb orb-a"></span>
-    <span class="orb orb-b"></span>
-    <span class="orb orb-c"></span>
-  </div>
-  <canvas id="confetti" aria-hidden="true"></canvas>
 
-  <header class="topnav">
-    <a class="topnav-brand" href="#top">Auntie</a>
-    <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="topnav-links" id="siteNav">
-      <a href="#letter">Letter</a>
-      <a href="#memories">Memories</a>
-      <a href="#film">Films</a>
-    </nav>
-  </header>
-
-  <main id="top">
-    <section class="hero" aria-label="Birthday welcome">
-      <div class="hero-media">
-        <picture>
-          <source srcset="media/optimized/mem-10.webp" type="image/webp" />
-          <img
-            src="media/optimized/mem-10.jpg"
-            alt="Auntie smiling on a boat with birthday balloons"
-            class="hero-img"
-            fetchpriority="high"
-          />
-        </picture>
-        <div class="hero-veil"></div>
-      </div>
-      <div class="hero-content">
-        <p class="hero-date">21 · 08 · 2026</p>
-        <h1 class="hero-brand">Auntie</h1>
-        <p class="hero-script">Happy 58th Birthday</p>
-        <p class="hero-lead">
-          A whole lifetime of warmth, collected into one golden day — and these frames of us, forever yours.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#memories">See our memories</a>
-          <a class="btn btn-ghost" href="#film">Play the films</a>
-        </div>
-      </div>
-      <a class="scroll-hint" href="#letter" aria-label="Scroll to letter">
-        <span></span>
-      </a>
-    </section>
-
-    <section class="letter" id="letter">
-      <div class="letter-inner">
-        <p class="section-kicker">From the heart</p>
-        <h2 class="section-title">For the woman who makes ordinary days feel like celebrations</h2>
-        <div class="letter-body">
-          <p>
-            Today you turn <em>fifty-eight</em> — and somehow you still carry the light of someone who makes everyone around her feel chosen.
-          </p>
-          <p>
-            These photos and films are only a small shelf of proof: restaurant tables and boat decks, pink evenings and sunny afternoons, quiet hugs and loud laughs. Every frame says the same thing — we are so lucky you are ours.
-          </p>
-          <p class="letter-sign">With your love,<br /><span>Dodo</span></p>
-          <div class="letter-arabic" lang="ar" dir="rtl">
-            <p class="letter-arabic-main">
-              <span class="letter-emoji" aria-hidden="true">❤️</span>
-              كل سنة وانتي طيبة يا أحلي خالة ف الدنيا
-              <span class="letter-emoji" aria-hidden="true">❤️</span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="memories" id="memories">
-      <div class="section-head">
-        <p class="section-kicker">The gallery · 23 photos</p>
-        <h2 class="section-title">Moments that raised us</h2>
-        <p class="section-lead">A living scrapbook — watch the stage, then open any memory.</p>
-      </div>
-
-      <!-- Cinematic photo stage -->
-      <div class="photo-stage reveal" aria-label="Featured memory slideshow">
-        <div class="stage-decor" aria-hidden="true">
-          <span class="stage-ring stage-ring-a"></span>
-          <span class="stage-ring stage-ring-b"></span>
-          <span class="stage-bloom"></span>
-          <span class="stage-spark stage-spark-1"></span>
-          <span class="stage-spark stage-spark-2"></span>
-          <span class="stage-spark stage-spark-3"></span>
-          <span class="stage-spark stage-spark-4"></span>
-        </div>
-
-        <figure class="stage-polaroid stage-polaroid-left" data-stage-side="0">
-          <img src="media/optimized/mem-06.jpg" alt="" loading="lazy" />
-        </figure>
-        <figure class="stage-polaroid stage-polaroid-right" data-stage-side="1">
-          <img src="media/optimized/new-11.jpg" alt="" loading="lazy" />
-        </figure>
-
-        <div class="stage-frame">
-          <div class="stage-corners" aria-hidden="true">
-            <i></i><i></i><i></i><i></i>
-          </div>
-          <div class="stage-viewport">
-            <img class="stage-img is-active" id="stageImgA" src="media/optimized/mem-10.jpg" alt="Featured memory" />
-            <img class="stage-img" id="stageImgB" src="media/optimized/new-01.jpg" alt="" aria-hidden="true" />
-          </div>
-          <div class="stage-caption-wrap">
-            <p class="stage-kicker">Now showing</p>
-            <p class="stage-caption" id="stageCaption">Balloons, blue water, birthday spirit</p>
-          </div>
-        </div>
-
-        <div class="stage-controls">
-          <button type="button" class="stage-btn" id="stagePrev" aria-label="Previous featured photo">‹</button>
-          <div class="stage-dots" id="stageDots" role="tablist" aria-label="Featured photos"></div>
-          <button type="button" class="stage-btn" id="stageNext" aria-label="Next featured photo">›</button>
-        </div>
-      </div>
-
-      <div class="filters" role="tablist" aria-label="Photo categories">
-        <button type="button" class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All</button>
-        <button type="button" class="filter-btn" data-filter="together" role="tab" aria-selected="false">Together</button>
-        <button type="button" class="filter-btn" data-filter="sea" role="tab" aria-selected="false">Sea day</button>
-        <button type="button" class="filter-btn" data-filter="family" role="tab" aria-selected="false">Family</button>
-        <button type="button" class="filter-btn" data-filter="portrait" role="tab" aria-selected="false">Portrait</button>
-      </div>
-
-      <div class="gallery" id="photoGallery">
-        <!-- Together -->
-        <figure class="tile orient-landscape tile-enter" data-cat="together" data-caption="A kiss on the cheek, pure love" style="--i:0">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/mem-02.webp" type="image/webp" />
-            <img src="media/optimized/mem-02.jpg" alt="A loving kiss on Auntie's cheek" loading="lazy" width="1333" height="1000" />
-          </picture>
-        </figure>
-        <figure class="tile orient-landscape tile-enter" data-cat="together" data-caption="Two smiles, one heartbeat" style="--i:1">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/mem-03.webp" type="image/webp" />
-            <img src="media/optimized/mem-03.jpg" alt="Auntie and nephew smiling together in the car" loading="lazy" width="1333" height="1000" />
-          </picture>
-        </figure>
-        <figure class="tile orient-landscape tile-enter" data-cat="together" data-caption="Green days and quiet pride" style="--i:2">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/mem-04.webp" type="image/webp" />
-            <img src="media/optimized/mem-04.jpg" alt="Auntie kissing her nephew's cheek outdoors" loading="lazy" width="1333" height="1000" />
-          </picture>
-        </figure>
-        <figure class="tile orient-landscape tile-enter" data-cat="together" data-caption="Table talk and tenderness" style="--i:3">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/mem-05.webp" type="image/webp" />
-            <img src="media/optimized/mem-05.jpg" alt="Auntie leaning affectionately at a restaurant table" loading="lazy" width="1024" height="768" />
-          </picture>
-        </figure>
-        <figure class="tile orient-portrait tile-enter" data-cat="together" data-caption="Smile that fills the frame" style="--i:4">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/mem-06.webp" type="image/webp" />
-            <img src="media/optimized/mem-06.jpg" alt="Selfie with Auntie in a white hijab" loading="lazy" width="1000" height="1333" />
-          </picture>
-        </figure>
-        <figure class="tile orient-portrait tile-enter" data-cat="together" data-caption="A soft afternoon, side by side" style="--i:5">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/mem-07.webp" type="image/webp" />
-            <img src="media/optimized/mem-07.jpg" alt="Auntie and family outdoors in patterned white" loading="lazy" width="933" height="1400" />
-          </picture>
-        </figure>
-        <figure class="tile orient-portrait tile-enter" data-cat="together" data-caption="Pink evening joy" style="--i:6">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/mem-08.webp" type="image/webp" />
-            <img src="media/optimized/mem-08.jpg" alt="Auntie in a bright pink hijab smiling in the car" loading="lazy" width="788" height="1400" />
-          </picture>
-        </figure>
-        <figure class="tile orient-portrait tile-enter" data-cat="together" data-caption="Close, bright, unforgettable" style="--i:7">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/mem-09.webp" type="image/webp" />
-            <img src="media/optimized/mem-09.jpg" alt="Close-up selfie with Auntie" loading="lazy" width="961" height="1280" />
-          </picture>
-        </figure>
-        <figure class="tile orient-portrait tile-enter" data-cat="together" data-caption="Night lights, warm company" style="--i:8">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/mem-11.webp" type="image/webp" />
-            <img src="media/optimized/mem-11.jpg" alt="Auntie by the waterfront at night" loading="lazy" width="933" height="1400" />
-          </picture>
-        </figure>
-        <figure class="tile orient-portrait tile-enter" data-cat="together" data-caption="A hug on the open sea" style="--i:9">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/new-05.webp" type="image/webp" />
-            <img src="media/optimized/new-05.jpg" alt="Family member kissing Auntie on the cheek on a boat" loading="lazy" width="960" height="1280" />
-          </picture>
-        </figure>
-        <figure class="tile orient-portrait tile-enter" data-cat="together" data-caption="Love returned, wave after wave" style="--i:10">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/new-06.webp" type="image/webp" />
-            <img src="media/optimized/new-06.jpg" alt="Auntie kissing a family member on the cheek on a boat" loading="lazy" width="960" height="1280" />
-          </picture>
-        </figure>
-
-        <!-- Sea day -->
-        <figure class="tile orient-portrait tile-enter" data-cat="sea" data-caption="Balloons, blue water, birthday spirit" style="--i:11">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/mem-10.webp" type="image/webp" />
-            <img src="media/optimized/mem-10.jpg" alt="Auntie on a boat holding balloons" loading="lazy" width="960" height="1280" />
-          </picture>
-        </figure>
-        <figure class="tile orient-landscape tile-enter" data-cat="sea" data-caption="Four hearts, one horizon" style="--i:12">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/new-01.webp" type="image/webp" />
-            <img src="media/optimized/new-01.jpg" alt="Family group on a boat by turquoise water" loading="lazy" width="1280" height="960" />
-          </picture>
-        </figure>
-        <figure class="tile orient-portrait tile-enter" data-cat="sea" data-caption="Blue dock, bright smiles" style="--i:13">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/new-02.webp" type="image/webp" />
-            <img src="media/optimized/new-02.jpg" alt="Four women on a blue floating dock" loading="lazy" width="960" height="1280" />
-          </picture>
-        </figure>
-        <figure class="tile orient-landscape tile-enter" data-cat="sea" data-caption="Selfie with balloons" style="--i:14">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/new-03.webp" type="image/webp" />
-            <img src="media/optimized/new-03.jpg" alt="Boat selfie with family and balloons" loading="lazy" width="1280" height="959" />
-          </picture>
-        </figure>
-        <figure class="tile orient-portrait tile-enter" data-cat="sea" data-caption="Standing tall over the sea" style="--i:15">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/new-04.webp" type="image/webp" />
-            <img src="media/optimized/new-04.jpg" alt="Family standing together on the boat deck" loading="lazy" width="960" height="1280" />
-          </picture>
-        </figure>
-        <figure class="tile orient-landscape tile-enter" data-cat="sea" data-caption="Lighthouse and laughter" style="--i:16">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/new-07.webp" type="image/webp" />
-            <img src="media/optimized/new-07.jpg" alt="Family on a boat near a lighthouse with balloons" loading="lazy" width="1280" height="960" />
-          </picture>
-        </figure>
-        <figure class="tile orient-portrait tile-enter" data-cat="sea" data-caption="Captain Auntie" style="--i:17">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/new-11.webp" type="image/webp" />
-            <img src="media/optimized/new-11.jpg" alt="Auntie smiling at the boat helm" loading="lazy" width="1000" height="1333" />
-          </picture>
-        </figure>
-
-        <!-- Family -->
-        <figure class="tile orient-portrait tile-enter" data-cat="family" data-caption="A fun day out" style="--i:18">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/new-08.webp" type="image/webp" />
-            <img src="media/optimized/new-08.jpg" alt="Auntie hugging family by a red statue" loading="lazy" width="960" height="1280" />
-          </picture>
-        </figure>
-        <figure class="tile orient-portrait tile-enter" data-cat="family" data-caption="Generations in one embrace" style="--i:19">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/new-09.webp" type="image/webp" />
-            <img src="media/optimized/new-09.jpg" alt="Auntie hugging family with a little girl nearby" loading="lazy" width="960" height="1280" />
-          </picture>
-        </figure>
-        <figure class="tile orient-portrait tile-enter" data-cat="family" data-caption="Joy with the little one" style="--i:20">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/new-10.webp" type="image/webp" />
-            <img src="media/optimized/new-10.jpg" alt="Auntie holding a smiling baby outdoors" loading="lazy" width="960" height="1280" />
-          </picture>
-        </figure>
-        <figure class="tile orient-portrait tile-enter" data-cat="family" data-caption="A soft kiss for the baby" style="--i:21">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/new-12.webp" type="image/webp" />
-            <img src="media/optimized/new-12.jpg" alt="Auntie kissing a baby on the cheek" loading="lazy" width="960" height="1280" />
-          </picture>
-        </figure>
-
-        <!-- Portrait -->
-        <figure class="tile orient-portrait tile-enter" data-cat="portrait" data-caption="A portrait of grace" style="--i:22">
-          <span class="tile-frame" aria-hidden="true"></span>
-          <picture>
-            <source srcset="media/optimized/mem-01.webp" type="image/webp" />
-            <img src="media/optimized/mem-01.jpg" alt="Portrait of Auntie" loading="lazy" width="1000" height="1333" />
-          </picture>
-        </figure>
-      </div>
-    </section>
-
-    <section class="film" id="film">
-      <div class="film-inner">
-        <div class="section-head section-head-light">
-          <p class="section-kicker">The films · 2 videos</p>
-          <h2 class="section-title">Press play for living memories</h2>
-          <p class="section-lead">Both videos from your folders — sized to fit the page nicely.</p>
-        </div>
-
-        <div class="films-grid">
-          <article class="film-card reveal">
-            <div class="player player-portrait">
-              <video
-                controls
-                playsinline
-                preload="metadata"
-                poster="media/optimized/film-01-poster.jpg"
-                aria-label="Beach buggy memory film"
-              >
-                <source src="media/videos/film-beach-buggy.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <h3 class="film-title">Beach buggy film</h3>
-          </article>
-
-          <article class="film-card reveal">
-            <div class="player player-portrait">
-              <video
-                controls
-                playsinline
-                preload="metadata"
-                poster="media/optimized/new-01.webp"
-                aria-label="Sea day memory film"
-              >
-                <source src="media/videos/film-02.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <h3 class="film-title">Sea day film</h3>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="finale" id="wish">
-      <div class="finale-bg" aria-hidden="true">
-        <img src="media/optimized/mem-10.jpg" alt="" loading="lazy" />
-      </div>
-      <div class="finale-wash" aria-hidden="true"></div>
-      <div class="finale-glow" aria-hidden="true"></div>
-      <div class="finale-floaters" aria-hidden="true">
-        <figure class="finale-polaroid finale-polaroid-a">
-          <img src="media/optimized/mem-06.jpg" alt="" loading="lazy" />
-        </figure>
-        <figure class="finale-polaroid finale-polaroid-b">
-          <img src="media/optimized/new-11.jpg" alt="" loading="lazy" />
-        </figure>
-        <figure class="finale-polaroid finale-polaroid-c">
-          <img src="media/optimized/new-01.jpg" alt="" loading="lazy" />
-        </figure>
-        <figure class="finale-polaroid finale-polaroid-d">
-          <img src="media/optimized/mem-02.jpg" alt="" loading="lazy" />
-        </figure>
-        <span class="finale-spark finale-spark-1"></span>
-        <span class="finale-spark finale-spark-2"></span>
-        <span class="finale-spark finale-spark-3"></span>
-        <span class="finale-spark finale-spark-4"></span>
-        <span class="finale-spark finale-spark-5"></span>
-      </div>
-      <p class="finale-years reveal">58</p>
-      <h2 class="finale-title reveal">May this year be softer, brighter, and full of people who love you back</h2>
-      <p class="finale-script reveal">Happy Birthday, Auntie</p>
-      <button type="button" class="btn btn-primary finale-btn" id="celebrateBtn">Celebrate again</button>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>Made with love for Auntie’s 58th · 21 August 2026</p>
-  </footer>
-
-  <div class="lightbox" id="lightbox" hidden>
-    <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
-    <button type="button" class="lightbox-nav lightbox-prev" aria-label="Previous">‹</button>
-    <div class="lightbox-stage">
-      <img alt="" />
+<!-- PAGE LOADER -->
+<div id="page-loader">
+    <div class="loader-gem">&#10022;</div>
+    <div class="loader-name">
+        <span class="en">Dr. Naglaa Ayad</span>
+        <span class="ar">د. نجلاء عياد</span>
     </div>
-    <button type="button" class="lightbox-nav lightbox-next" aria-label="Next">›</button>
-    <p class="lightbox-caption"></p>
-  </div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+</div>
 
-  <script src="script.js"></script>
+<!-- READING PROGRESS BAR -->
+<div id="progress-bar"></div>
+
+<!-- FLOATING AMBIENT ORBS -->
+<div class="orb" style="width:500px;height:500px;background:radial-gradient(circle,rgba(212,160,23,1),transparent 70%);top:-120px;right:-130px;animation-duration:22s;"></div>
+<div class="orb" style="width:350px;height:350px;background:radial-gradient(circle,rgba(184,120,10,1),transparent 70%);bottom:25%;left:-90px;animation-duration:30s;animation-delay:-12s;"></div>
+<div class="orb" style="width:280px;height:280px;background:radial-gradient(circle,rgba(200,150,40,1),transparent 70%);top:55%;right:5%;animation-duration:25s;animation-delay:-7s;"></div>
+
+<canvas id="canvas-bg"></canvas>
+
+<!-- THEME TOGGLE -->
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Switch Theme">
+    <svg class="theme-icon moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="theme-icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+
+<!-- LANGUAGE TOGGLE -->
+<button class="lang-btn" id="langBtn" aria-label="Switch language">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    <span id="langLabel">عربي</span>
+</button>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="navbar">
+    <div class="nav-logo">
+        <span class="en">Dr. Naglaa M. Ayad</span>
+        <span class="ar">د. نجلاء م. عياد</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#school"><span class="en">School</span><span class="ar">المدرسة</span></a></li>
+        <li><a href="#university"><span class="en">University</span><span class="ar">الجامعة</span></a></li>
+        <li><a href="#phd"><span class="en">PhD</span><span class="ar">الدكتوراه</span></a></li>
+        <li><a href="#career"><span class="en">Career</span><span class="ar">المسيرة</span></a></li>
+        <li><a href="#leadership"><span class="en">Leadership</span><span class="ar">القيادة</span></a></li>
+        <li><a href="#achievements"><span class="en">Achievements</span><span class="ar">الإنجازات</span></a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-badge">
+        <span style="font-size:0.6rem;">&#10022;</span>
+        <span class="en">A Life of Excellence &amp; Enduring Impact</span>
+        <span class="ar">مسيرة من التميز والأثر الدائم</span>
+        <span style="font-size:0.6rem;">&#10022;</span>
+    </div>
+    <h1 class="hero-name">
+        <span class="line1">
+            <span class="en">Naglaa Mohamed Madbouly</span>
+            <span class="ar">نجلاء محمد مدبولي</span>
+        </span>
+        <span class="line2">
+            <span class="en">Ayad</span>
+            <span class="ar">عياد</span>
+        </span>
+    </h1>
+    <p class="hero-roles" id="heroRoles">
+        <span class="en">Educator &nbsp;&middot;&nbsp; Pioneer &nbsp;&middot;&nbsp; Scholar &nbsp;&middot;&nbsp; Leader</span>
+        <span class="ar">معلمة &nbsp;&middot;&nbsp; رائدة &nbsp;&middot;&nbsp; عالمة &nbsp;&middot;&nbsp; قائدة</span>
+    </p>
+    <div class="hero-ornament">
+        <span class="line"></span>
+        <span class="gem">&#10022;</span>
+        <span class="gem" style="font-size:0.55rem;margin:0 -0.3rem;">&#10022;</span>
+        <span class="gem">&#10022;</span>
+        <span class="line"></span>
+    </div>
+    <div class="hero-pillars">
+        <div class="hero-pillar">
+            <div class="pillar-val" id="stat-years">40+</div>
+            <div class="pillar-lbl"><span class="en">Years of Impact</span><span class="ar">عامًا من التأثير</span></div>
+        </div>
+        <div class="hero-pillar">
+            <div class="pillar-val" id="stat-unis">3</div>
+            <div class="pillar-lbl"><span class="en">Universities</span><span class="ar">جامعات</span></div>
+        </div>
+        <div class="hero-pillar">
+            <div class="pillar-val" id="stat-confs">4</div>
+            <div class="pillar-lbl"><span class="en">International Conferences</span><span class="ar">مؤتمرات دولية</span></div>
+        </div>
+        <div class="hero-pillar">
+            <div class="pillar-val">&#8734;</div>
+            <div class="pillar-lbl"><span class="en">Inspiration Given</span><span class="ar">إلهام لا حدود له</span></div>
+        </div>
+    </div>
+    <div class="hero-scroll" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})" aria-label="Scroll down">
+        <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </div>
+</section>
+
+<!-- INTRO QUOTE -->
+<section class="intro-section" id="intro">
+    <div class="quote-wrap reveal">
+        <span class="big-quote">&ldquo;</span>
+        <p class="quote-body en">A remarkable journey that began within the walls of one of Egypt's most distinguished schools, traversed the lecture halls of Cairo's finest universities, crossed continents to the cobblestone streets of Glasgow &mdash; and returned home to reshape the very future of Egyptian education.</p>
+        <p class="quote-body ar">رحلة استثنائية بدأت بين جدران أعرق المدارس، واجتازت قاعات أرقى الجامعات في مصر، وعبرت القارات إلى شوارع غلاسكو المرصوفة بالحجارة &mdash; لتعود إلى الوطن وتُعيد تشكيل مستقبل التعليم المصري.</p>
+        <div class="quote-attr">
+            <span class="en">&mdash; A Life Well Lived &middot; A Legacy Enduring &mdash;</span>
+            <span class="ar">&mdash; حياة بامتياز &middot; وإرث باقٍ للأجيال &mdash;</span>
+        </div>
+    </div>
+</section>
+
+<!-- SCHOOL -->
+<section class="school-section" id="school">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-label reveal en">Chapter One</span>
+            <span class="section-label reveal ar">الفصل الأول</span>
+            <h2 class="section-title reveal d1">
+                <span class="en">The Foundations of <span class="gold">Excellence</span></span>
+                <span class="ar">أسس <span class="gold">التميز</span></span>
+            </h2>
+            <p class="section-desc reveal d2 en">Where every remarkable journey begins &mdash; with curiosity, discipline, and the very finest education Egypt has to offer.</p>
+            <p class="section-desc reveal d2 ar">هنا تبدأ كل رحلة استثنائية &mdash; بالفضول والانضباط وأرقى ما تقدمه مصر من تعليم.</p>
+        </div>
+        <div class="school-grid">
+            <div class="school-text reveal-l">
+                <div class="section-label en">Kindergarten through General Secondary Certificate</div>
+                <div class="section-label ar">من الحضانة إلى الثانوية العامة</div>
+                <h3><span class="en">Victory College</span><span class="ar">فيكتوري كوليدج</span></h3>
+                <div class="school-location"><span class="en">Maadi, Cairo, Egypt</span><span class="ar">المعادي، القاهرة، مصر</span></div>
+                <p class="en">From the very first day of kindergarten all the way through to the General Secondary Certificate &mdash; the entirety of her foundational education was shaped within the distinguished walls of Victory College in Maadi. An institution synonymous with academic rigour, character, and the highest standards of learning.</p>
+                <p class="ar">من أول يوم في الحضانة وحتى الحصول على شهادة الثانوية العامة، تشكّل وجدانها الأكاديمي وتكوّنت شخصيتها الفكرية بين أروقة مدرسة فيكتوري كوليدج العريقة بالمعادي. مؤسسة ترادف الرقي والتفوق وأعلى معايير التعليم.</p>
+                <div class="badge-card">
+                    <div class="badge-icon">&#128081;</div>
+                    <div class="badge-body">
+                        <h4><span class="en">One of Egypt's Most Prestigious Schools</span><span class="ar">إحدى أعرق مدارس مصر</span></h4>
+                        <p class="en">Victory College stands as one of Egypt's most elite and historically significant institutions &mdash; attended by the very cream of Egyptian society across generations.</p>
+                        <p class="ar">تُعدّ فيكتوري كوليدج من أرقى المؤسسات التعليمية وأكثرها تاريخيةً في مصر، إذ ارتادها صفوة المجتمع المصري جيلًا بعد جيل.</p>
+                    </div>
+                </div>
+                <div class="badge-card">
+                    <div class="badge-icon">&#127963;</div>
+                    <div class="badge-body">
+                        <h4><span class="en">A Royal Seal of Prestige</span><span class="ar">الختم الملكي للرقي</span></h4>
+                        <p class="en">The Alexandria branch of the college counted King Fouad among its distinguished alumni &mdash; a testament to the school's unrivalled heritage and royal recognition.</p>
+                        <p class="ar">احتضن فرعها في الإسكندرية الملك فؤاد بين طلابها المتميزين، مما يشهد على مكانتها الاستثنائية وعراقتها الراسخة التي لا تُضاهى.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal-r">
+                <div class="photo-grid">
+                    <div class="photo-slot"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>&#128247; <span class="en">School Years Photo</span><span class="ar">صورة من أيام المدرسة</span></div>
+                    <div class="photo-slot"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>&#128247; <span class="en">Kindergarten Days</span><span class="ar">أيام الحضانة</span></div>
+                    <div class="photo-slot"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>&#128247; <span class="en">Secondary Certificate</span><span class="ar">الثانوية العامة</span></div>
+                </div>
+                <p class="photo-caption"><span class="en">From kindergarten through to the General Secondary Certificate &mdash; Victory College, Maadi</span><span class="ar">من الحضانة إلى الثانوية العامة &mdash; فيكتوري كوليدج، المعادي</span></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION TIMELINE -->
+<section class="education-section" id="university">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-label reveal en">Chapter Two</span>
+            <span class="section-label reveal ar">الفصل الثاني</span>
+            <h2 class="section-title reveal d1">
+                <span class="en">The Academic <span class="gold">Journey</span></span>
+                <span class="ar">الرحلة <span class="gold">الأكاديمية</span></span>
+            </h2>
+            <p class="section-desc reveal d2 en">A pursuit of knowledge that spanned multiple disciplines, institutions, and ultimately &mdash; nations.</p>
+            <p class="section-desc reveal d2 ar">مسيرة علمية امتدت عبر تخصصات متعددة ومؤسسات رفيعة، لتتجاوز في نهاية المطاف حدود الأوطان.</p>
+        </div>
+        <div class="timeline">
+            <div class="tl-item">
+                <div class="tl-card reveal-l">
+                    <div class="tl-era"><span class="en">Bachelor's Degree &middot; Cairo, Egypt</span><span class="ar">بكالوريوس &middot; القاهرة، مصر</span></div>
+                    <div class="tl-inst"><span class="en">The American University in Cairo</span><span class="ar">الجامعة الأمريكية بالقاهرة</span></div>
+                    <div class="tl-deg"><span class="en">B.Sc. &mdash; Major: Computer Science &nbsp;&middot;&nbsp; Minor: Mathematics</span><span class="ar">بكالوريوس علوم &mdash; تخصص: علوم الحاسب &nbsp;&middot;&nbsp; تخصص فرعي: الرياضيات</span></div>
+                    <div class="tl-desc">
+                        <span class="en">Studied at AUC &mdash; a pioneering institution that launched <strong style="color:var(--gold-500);">Egypt's very first Computer Science programme</strong>. At the same time, Cairo University was only beginning to introduce Computer Engineering as a sub-discipline within its Communications department. AUC was truly ahead of its time.</span>
+                        <span class="ar">درست في الجامعة الأمريكية، الرائدة في إطلاق <strong style="color:var(--gold-500);">أول برنامج لعلوم الحاسب في مصر</strong>. في الوقت ذاته، كانت جامعة القاهرة في بداياتها مع هندسة الحاسب كفرع من قسم الاتصالات فحسب. كانت الجامعة الأمريكية حقًا سبّاقة لعصرها.</span>
+                    </div>
+                    <div class="tl-badge"><span class="en">&#11088; Egypt's First Computer Science Programme</span><span class="ar">&#11088; أول برنامج لعلوم الحاسب في مصر</span></div>
+                </div>
+                <div class="tl-node"><div class="tl-dot" style="animation:glow-pulse 2.5s ease-in-out infinite;">&#127891;</div></div>
+                <div class="tl-empty"></div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-empty"></div>
+                <div class="tl-node"><div class="tl-dot" style="animation:glow-pulse 2.5s ease-in-out 0.5s infinite;">&#128218;</div></div>
+                <div class="tl-card reveal-r">
+                    <div class="tl-era"><span class="en">Bachelor's Degree &middot; Cairo, Egypt</span><span class="ar">بكالوريوس &middot; القاهرة، مصر</span></div>
+                    <div class="tl-inst"><span class="en">Cairo University</span><span class="ar">جامعة القاهرة</span></div>
+                    <div class="tl-deg"><span class="en">B.Com. &mdash; Faculty of Commerce &nbsp;&middot;&nbsp; Department of Accounting</span><span class="ar">بكالوريوس تجارة &mdash; كلية التجارة &nbsp;&middot;&nbsp; قسم المحاسبة</span></div>
+                    <div class="tl-desc">
+                        <span class="en">Complementing her technical expertise with a rigorous foundation in business and financial sciences &mdash; through Cairo University's Faculty of Commerce, specialising in Accounting. A breadth of knowledge that would later prove invaluable in institutional leadership.</span>
+                        <span class="ar">إتمامًا لبنيتها المعرفية الشاملة، درست في كلية التجارة بجامعة القاهرة تخصص المحاسبة، مما أتاح لها أساسًا متينًا في العلوم المالية والإدارية، وقد بدا أثر ذلك جليًا لاحقًا في قيادتها المؤسسية.</span>
+                    </div>
+                    <div class="tl-badge"><span class="en">&#128188; Faculty of Commerce &middot; Accounting</span><span class="ar">&#128188; كلية التجارة &middot; قسم المحاسبة</span></div>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-card reveal-l">
+                    <div class="tl-era"><span class="en">Doctorate &middot; Glasgow, Scotland, UK</span><span class="ar">دكتوراه &middot; غلاسكو، اسكتلندا، المملكة المتحدة</span></div>
+                    <div class="tl-inst"><span class="en">University of Strathclyde</span><span class="ar">جامعة ستراثكلايد</span></div>
+                    <div class="tl-deg"><span class="en">PhD &mdash; Awarded the ORS (Overseas Research Scholarship)</span><span class="ar">دكتوراه &mdash; حاصلة على منحة ORS (منحة الأبحاث الخارجية)</span></div>
+                    <div class="tl-desc">
+                        <span class="en">Pursued doctoral research at the prestigious University of Strathclyde in Glasgow, Scotland &mdash; awarded the highly competitive <strong style="color:var(--gold-500);">ORS Award (Overseas Research Scholarship)</strong>, a recognition granted by the UK government to the most academically distinguished international scholars.</span>
+                        <span class="ar">أجرت أبحاثها لنيل الدكتوراه في جامعة ستراثكلايد العريقة بغلاسكو، اسكتلندا، حيث حصلت على منحة <strong style="color:var(--gold-500);">ORS (منحة الأبحاث الخارجية)</strong> التنافسية الرفيعة، التي تمنحها الحكومة البريطانية لأكثر الطلاب الدوليين تميزًا أكاديميًا.</span>
+                    </div>
+                    <div class="tl-badge"><span class="en">&#127885; ORS Overseas Research Scholarship &middot; UK Government</span><span class="ar">&#127885; منحة ORS للأبحاث الخارجية &middot; الحكومة البريطانية</span></div>
+                </div>
+                <div class="tl-node"><div class="tl-dot" style="animation:glow-pulse 2.5s ease-in-out 1s infinite;">&#127942;</div></div>
+                <div class="tl-empty"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PHD & INTERNATIONAL -->
+<section class="phd-section" id="phd">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-label reveal en">Chapter Three</span>
+            <span class="section-label reveal ar">الفصل الثالث</span>
+            <h2 class="section-title reveal d1">
+                <span class="en">Scotland &amp; <span class="gold">Global Horizons</span></span>
+                <span class="ar">اسكتلندا و<span class="gold">آفاق عالمية</span></span>
+            </h2>
+            <p class="section-desc reveal d2 en">Beyond the doctorate &mdash; leadership, diplomacy, and scholarship on the international stage.</p>
+            <p class="section-desc reveal d2 ar">ما وراء الدكتوراه &mdash; قيادة ودبلوماسية وحضور علمي رفيع على المستوى الدولي.</p>
+        </div>
+        <div class="phd-grid">
+            <div class="phd-main reveal-l">
+                <div class="tl-era" style="margin-bottom:1rem;">
+                    <span class="en">During PhD Studies &middot; University of Strathclyde &middot; Glasgow, UK</span>
+                    <span class="ar">خلال سنوات الدكتوراه &middot; جامعة ستراثكلايد &middot; غلاسكو، المملكة المتحدة</span>
+                </div>
+                <h3 style="font-family:var(--font-display);font-size:1.55rem;color:var(--text-heading);margin-bottom:1.7rem;line-height:1.25;">
+                    <span class="en">Leadership Beyond<br>the Lecture Hall</span>
+                    <span class="ar" style="font-family:'Cairo',serif;line-height:1.5;">قيادة تتجاوز<br>قاعات المحاضرات</span>
+                </h3>
+                <ul class="achieve-list">
+                    <li><span class="bullet">&#9670;</span><span class="en">Elected <strong>President of the Egyptian Students' Union</strong> in the United Kingdom &mdash; representing and advocating for Egyptian students across Britain.</span><span class="ar">انتُخبت <strong>رئيسة لاتحاد الطلاب المصريين</strong> في المملكة المتحدة، مثّلت الطلاب المصريين ودافعت عن مصالحهم في ربوع بريطانيا.</span></li>
+                    <li><span class="bullet">&#9670;</span><span class="en">Met personally with <strong>Dr. Mofeed Shehab</strong>, Egypt's Minister of Higher Education, to discuss the advancement of Egyptian academic excellence abroad.</span><span class="ar">التقت شخصيًا بـ<strong>د. مفيد شهاب</strong>، وزير التعليم العالي المصري آنذاك، لبحث سبل النهوض بالتميز الأكاديمي المصري في الخارج.</span></li>
+                    <li><span class="bullet">&#9670;</span><span class="en">Organised a prestigious celebration at the <strong>Staff Club of the University of Strathclyde</strong> &mdash; held under the official patronage of Strathclyde's International Office.</span><span class="ar">نظّمت احتفالية مرموقة في <strong>نادي أعضاء هيئة التدريس بجامعة ستراثكلايد</strong>، برعاية رسمية من المكتب الدولي للجامعة.</span></li>
+                    <li><span class="bullet">&#9670;</span><span class="en">Attended and presented at multiple <strong>international academic conferences</strong> &mdash; with research papers published in their official proceedings.</span><span class="ar">حضرت وشاركت بأوراق بحثية في <strong>مؤتمرات أكاديمية دولية</strong> متعددة، نُشرت في وقائعها الرسمية.</span></li>
+                    <li><span class="bullet">&#9670;</span><span class="en">Engaged in academic collaboration with the prestigious <strong>University of Bath</strong>, UK.</span><span class="ar">انخرطت في تعاون أكاديمي مع <strong>جامعة باث</strong> المرموقة، المملكة المتحدة.</span></li>
+                </ul>
+                <div style="margin-top:2rem;">
+                    <div class="photo-slot" style="aspect-ratio:16/9;">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="width:28px;height:28px;"><path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+                        &#128247; <span class="en">Meeting with Minister Dr. Mofeed Shehab</span><span class="ar">لقاء مع وزير التعليم العالي د. مفيد شهاب</span>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal-r" style="display:flex;flex-direction:column;gap:1.4rem;">
+                <h3 style="font-family:var(--font-display);font-size:1.2rem;color:var(--text-heading);">
+                    <span class="en">International Conferences</span>
+                    <span class="ar" style="font-family:'Cairo',serif;">المؤتمرات الدولية</span>
+                </h3>
+                <div class="conf-grid">
+                    <div class="conf-card"><div class="conf-flag">&#127463;&#127468;</div><div class="conf-name"><span class="en">Bulgaria</span><span class="ar">بلغاريا</span></div><div class="conf-sub"><span class="en">International Conference &middot; Research Paper</span><span class="ar">مؤتمر دولي &middot; ورقة بحثية</span></div></div>
+                    <div class="conf-card"><div class="conf-flag">&#127481;&#127479;</div><div class="conf-name"><span class="en">Turkey</span><span class="ar">تركيا</span></div><div class="conf-sub"><span class="en">International Conference &middot; Research Paper</span><span class="ar">مؤتمر دولي &middot; ورقة بحثية</span></div></div>
+                    <div class="conf-card"><div class="conf-flag">&#127468;&#127463;</div><div class="conf-name"><span class="en">Bath University</span><span class="ar">جامعة باث</span></div><div class="conf-sub"><span class="en">Academic Collaboration &middot; UK</span><span class="ar">تعاون أكاديمي &middot; المملكة المتحدة</span></div></div>
+                    <div class="conf-card"><div class="conf-flag">&#127988;&#917607;&#917602;&#917619;&#917603;&#917620;&#917631;</div><div class="conf-name"><span class="en">Strathclyde</span><span class="ar">ستراثكلايد</span></div><div class="conf-sub"><span class="en">Glasgow, Scotland</span><span class="ar">غلاسكو، اسكتلندا</span></div></div>
+                </div>
+                <div class="info-box">
+                    <div class="info-box-label"><span class="en">Research Contribution</span><span class="ar">مساهمة بحثية</span></div>
+                    <h4><span class="en">Published Academic Research</span><span class="ar">بحث أكاديمي منشور</span></h4>
+                    <p class="en">Research papers presented at international conferences and published in their official academic proceedings &mdash; a lasting contribution to the global body of scholarly knowledge.</p>
+                    <p class="ar">أوراق بحثية قُدّمت في مؤتمرات دولية ونُشرت في وقائعها الأكاديمية الرسمية &mdash; إسهامًا راسخًا في المعرفة العلمية العالمية.</p>
+                </div>
+                <div class="info-box">
+                    <div class="info-box-label"><span class="en">ORS Award</span><span class="ar">منحة ORS</span></div>
+                    <h4><span class="en">Overseas Research Scholarship</span><span class="ar">منحة الأبحاث الخارجية</span></h4>
+                    <p class="en">Awarded by the UK Government to international doctoral students of outstanding academic merit &mdash; recognising exceptional scholarly excellence and potential.</p>
+                    <p class="ar">تُمنح من الحكومة البريطانية لطلاب الدكتوراه الدوليين من ذوي التميز الأكاديمي الاستثنائي &mdash; اعترافًا بكفاءتها وإمكاناتها العلمية الفائقة.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CAREER -->
+<section class="career-section" id="career">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-label reveal en">Chapter Four</span>
+            <span class="section-label reveal ar">الفصل الرابع</span>
+            <h2 class="section-title reveal d1">
+                <span class="en">Academic <span class="gold">Career</span></span>
+                <span class="ar">المسيرة <span class="gold">الأكاديمية</span></span>
+            </h2>
+            <p class="section-desc reveal d2 en">Translating a lifetime of knowledge into practice &mdash; shaping the next generation of Egypt's finest minds.</p>
+            <p class="section-desc reveal d2 ar">توظيف عمر من المعرفة في خدمة الإنسان &mdash; لتشكيل جيل من أرقى عقول مصر.</p>
+        </div>
+        <div class="career-grid">
+            <div class="career-card reveal d1">
+                <div class="career-icon-wrap">&#127963;</div>
+                <div class="career-name"><span class="en">American University in Cairo</span><span class="ar">الجامعة الأمريكية بالقاهرة</span></div>
+                <div class="career-role"><span class="en">Academic Staff &middot; Mathematics Department</span><span class="ar">عضو هيئة تدريس &middot; قسم الرياضيات</span></div>
+                <div class="career-body"><span class="en">Served as a member of academic staff within AUC's distinguished Mathematics Department &mdash; teaching, mentoring and inspiring students at one of Egypt's most esteemed universities.</span><span class="ar">خدمت عضوًا في هيئة التدريس بقسم الرياضيات المتميز في الجامعة الأمريكية، تعليمًا وتوجيهًا وإلهامًا للطلاب في إحدى أرقى جامعات مصر.</span></div>
+            </div>
+            <div class="career-card reveal d2">
+                <div class="career-icon-wrap">&#127891;</div>
+                <div class="career-name"><span class="en">Helwan University</span><span class="ar">جامعة حلوان</span></div>
+                <div class="career-role"><span class="en">Academic Staff Member</span><span class="ar">عضو هيئة تدريس</span></div>
+                <div class="career-body"><span class="en">Contributed to higher education at Helwan University &mdash; now known as the University of the Capital &mdash; further extending her profound academic impact across Egypt.</span><span class="ar">أسهمت في التعليم العالي بجامعة حلوان &mdash; المعروفة اليوم بجامعة العاصمة &mdash; موسّعةً بذلك أثرها الأكاديمي العميق عبر جامعات مصر.</span></div>
+            </div>
+            <div class="career-card reveal d3">
+                <div class="career-icon-wrap">&#9879;</div>
+                <div class="career-name"><span class="en">Egyptian Society for Science &amp; Technology</span><span class="ar">الجمعية المصرية للعلوم والتكنولوجيا</span></div>
+                <div class="career-role"><span class="en">Chairman of the Board of Directors</span><span class="ar">رئيس مجلس الإدارة</span></div>
+                <div class="career-body"><span class="en">As Chairman of the Egyptian General Society for Science and Technology, she led strategic national initiatives at the vital intersection of science, technology, and education.</span><span class="ar">بوصفها رئيسًا للجمعية المصرية العامة للعلوم والتكنولوجيا، قادت مبادرات وطنية استراتيجية في التقاطع الحيوي بين العلوم والتكنولوجيا والتعليم.</span></div>
+            </div>
+            <div class="career-card reveal d4">
+                <div class="career-icon-wrap">&#127959;</div>
+                <div class="career-name"><span class="en">Cairo Higher Institute</span><span class="ar">المعهد العالي بالقاهرة</span></div>
+                <div class="career-role"><span class="en">Chairman of the Board of Directors</span><span class="ar">رئيس مجلس الإدارة</span></div>
+                <div class="career-body"><span class="en">Appointed Chairman of the Cairo Higher Institute for Engineering, Computer Science and Management &mdash; where her most transformative and far-reaching work truly began.</span><span class="ar">عُيّنت رئيسًا لمجلس إدارة المعهد العالي للهندسة وعلوم الحاسب والإدارة بالقاهرة، حيث انطلق أعمق أثرها وأبعد رؤيتها الإصلاحية.</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section class="leadership-section" id="leadership">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-label reveal en">Chapter Five</span>
+            <span class="section-label reveal ar">الفصل الخامس</span>
+            <h2 class="section-title reveal d1">
+                <span class="en">Leadership &amp; <span class="gold">Transformation</span></span>
+                <span class="ar">القيادة و<span class="gold">التحول</span></span>
+            </h2>
+            <p class="section-desc reveal d2 en">At the helm of Cairo Higher Institute &mdash; a visionary restructuring that completely redefined the institution for the modern age.</p>
+            <p class="section-desc reveal d2 ar">على رأس المعهد العالي بالقاهرة &mdash; إصلاح شامل وبعيد النظر أعاد تشكيل المؤسسة من أساسها لمواكبة العصر.</p>
+        </div>
+        <div class="leadership-grid">
+            <div class="lead-card reveal d1">
+                <div class="lead-number">01</div>
+                <div class="lead-icon">&#128268;</div>
+                <div class="lead-title"><span class="en">Complete Infrastructure Overhaul</span><span class="ar">تحديث شامل للبنية التحتية</span></div>
+                <div class="lead-subtitle"><span class="en">Modernisation from the Ground Up</span><span class="ar">تحديث من الجذور</span></div>
+                <div class="lead-body"><span class="en">Spearheaded a comprehensive renewal of the institute's entire physical and digital infrastructure &mdash; encompassing state-of-the-art fire safety systems, full campus network connectivity, and a professional CCTV surveillance system deployed across every building.</span><span class="ar">قادت تجديدًا شاملًا للبنية التحتية المادية والرقمية للمعهد بأسرها، شملت أنظمة متطورة لمكافحة الحرائق، وشبكة اتصال تغطي جميع أرجاء الحرم، ومنظومة مراقبة احترافية بالكاميرات في كل المباني.</span></div>
+            </div>
+            <div class="lead-card reveal d2">
+                <div class="lead-number">02</div>
+                <div class="lead-icon">&#128187;</div>
+                <div class="lead-title"><span class="en">Full Digital Transformation</span><span class="ar">التحول الرقمي الكامل</span></div>
+                <div class="lead-subtitle"><span class="en">Smart Labs &middot; Smart Boards &middot; Smart Campus</span><span class="ar">معامل ذكية &middot; ألواح تفاعلية &middot; حرم رقمي</span></div>
+                <div class="lead-body"><span class="en">Equipped every laboratory with the latest computing technology and transformed each teaching space with interactive Smart Boards &mdash; ushering in a new era of modern, engaging, technology-driven education that meets international standards.</span><span class="ar">جهّزت كل معمل بأحدث التقنيات الحاسوبية وحوّلت كل قاعة دراسية بألواح ذكية تفاعلية، لتُطلق عهدًا جديدًا من التعليم الحديث المحفّز الذي يلبي المعايير الدولية.</span></div>
+            </div>
+            <div class="lead-card reveal d3">
+                <div class="lead-number">03</div>
+                <div class="lead-icon">&#9917;</div>
+                <div class="lead-title"><span class="en">Student Life &amp; Campus Wellbeing</span><span class="ar">حياة الطالب وجودة البيئة الجامعية</span></div>
+                <div class="lead-subtitle"><span class="en">Sports &middot; Social Spaces &middot; Community</span><span class="ar">رياضة &middot; فضاءات اجتماعية &middot; مجتمع</span></div>
+                <div class="lead-body"><span class="en">Developed brand-new sports courts and modern, welcoming cafeterias &mdash; recognising that a truly thriving academic community requires dedicated spaces for sport, leisure, and meaningful social connection beyond the lecture hall.</span><span class="ar">طوّرت ملاعب رياضية جديدة وكافيتيريات عصرية مرحّبة، إيمانًا بأن المجتمع الأكاديمي المزدهر يحتاج فضاءات للرياضة والترفيه والتواصل الإنساني خارج قاعات الدراسة.</span></div>
+            </div>
+            <div class="lead-card reveal d4">
+                <div class="lead-number">04</div>
+                <div class="lead-icon">&#128202;</div>
+                <div class="lead-title"><span class="en">Digital Systems Ecosystem</span><span class="ar">منظومة الأنظمة الرقمية المتكاملة</span></div>
+                <div class="lead-subtitle"><span class="en">End-to-End Institution Management</span><span class="ar">إدارة مؤسسية شاملة من طرف إلى طرف</span></div>
+                <div class="lead-body"><span class="en">Implemented a complete suite: <strong style="color:var(--gold-500);">Student Information System (SIS)</strong>, <strong style="color:var(--gold-500);">Learning Management System (LMS)</strong>, Online Admissions, Accounting Software, and the <strong style="color:var(--gold-500);">Servy HR System</strong> with a dedicated mobile application.</span><span class="ar">أطلقت حزمة متكاملة: <strong style="color:var(--gold-500);">نظام معلومات الطالب (SIS)</strong>، و<strong style="color:var(--gold-500);">نظام إدارة التعلم (LMS)</strong>، والقبول الإلكتروني، وبرامج المحاسبة، و<strong style="color:var(--gold-500);">نظام Servy للموارد البشرية</strong> مع تطبيق جوّال مخصص.</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="achievements-section" id="achievements">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-label reveal en">Chapter Six</span>
+            <span class="section-label reveal ar">الفصل السادس</span>
+            <h2 class="section-title reveal d1">
+                <span class="en">Programmes &amp; <span class="gold">Initiatives</span></span>
+                <span class="ar">البرامج و<span class="gold">المبادرات</span></span>
+            </h2>
+            <p class="section-desc reveal d2 en">A legacy built one initiative at a time &mdash; enriching student life, academic quality, and the institution's standing.</p>
+            <p class="section-desc reveal d2 ar">إرث يُبنى مبادرة تلو المبادرة &mdash; لإثراء حياة الطلاب وجودة التعليم ومكانة المؤسسة.</p>
+        </div>
+        <div class="achieve-grid">
+            <div class="achieve-card reveal d1"><div class="achieve-emoji">&#127942;</div><div class="achieve-title"><span class="en">Quality Assurance Workshops</span><span class="ar">ورش ضمان الجودة</span></div><div class="achieve-body"><span class="en">Hosted comprehensive workshops focused on academic quality standards and continuous institutional improvement.</span><span class="ar">استضافت ورشًا شاملة حول معايير الجودة الأكاديمية وتحسين المؤسسة باستمرار.</span></div></div>
+            <div class="achieve-card reveal d2"><div class="achieve-emoji">&#128188;</div><div class="achieve-title"><span class="en">Annual Employment Day</span><span class="ar">يوم التوظيف السنوي</span></div><div class="achieve-body"><span class="en">Established a dedicated career fair connecting graduating students directly with leading employers and industry partners.</span><span class="ar">أسّست معرضًا سنويًا للتوظيف يربط الخريجين مباشرةً بكبار أصحاب العمل وشركاء القطاع.</span></div></div>
+            <div class="achieve-card reveal d3"><div class="achieve-emoji">&#128682;</div><div class="achieve-title"><span class="en">Open Days</span><span class="ar">أيام الأبواب المفتوحة</span></div><div class="achieve-body"><span class="en">Organised engaging open day events welcoming prospective students and families to experience the institute's vibrant culture.</span><span class="ar">نظّمت فعاليات أيام مفتوحة تستقبل الطلاب المحتملين وأسرهم للتعرف على الثقافة المتميزة للمعهد.</span></div></div>
+            <div class="achieve-card reveal d4"><div class="achieve-emoji">&#9992;</div><div class="achieve-title"><span class="en">Educational Field Trips</span><span class="ar">الرحلات الميدانية التعليمية</span></div><div class="achieve-body"><span class="en">Facilitated enriching educational excursions &mdash; broadening students' horizons and perspectives far beyond the classroom.</span><span class="ar">يسّرت رحلات ميدانية تعليمية مثرية، موسّعةً آفاق الطلاب ومداركهم خارج الفصل الدراسي.</span></div></div>
+            <div class="achieve-card reveal d5"><div class="achieve-emoji">&#127897;</div><div class="achieve-title"><span class="en">Cultural Seminars</span><span class="ar">الندوات الثقافية</span></div><div class="achieve-body"><span class="en">Hosted a series of intellectual and cultural seminars fostering critical thinking and social awareness among the student body.</span><span class="ar">استضافت سلسلة من الندوات الفكرية والثقافية لتعزيز التفكير النقدي والوعي الاجتماعي لدى الطلاب.</span></div></div>
+            <div class="achieve-card reveal d6"><div class="achieve-emoji">&#9917;</div><div class="achieve-title"><span class="en">Sports Activities Programme</span><span class="ar">برنامج الأنشطة الرياضية</span></div><div class="achieve-body"><span class="en">Championed a vibrant programme of sporting activities nurturing physical wellbeing and team spirit alongside academic excellence.</span><span class="ar">أطلقت برنامجًا نشطًا من الأنشطة الرياضية، تعزيزًا للعافية البدنية وروح الفريق جنبًا إلى جنب مع التميز الأكاديمي.</span></div></div>
+            <div class="achieve-card reveal d7"><div class="achieve-emoji">&#128241;</div><div class="achieve-title"><span class="en">Servy HR Mobile System</span><span class="ar">نظام Servy للموارد البشرية</span></div><div class="achieve-body"><span class="en">Deployed a modern HR management platform with a dedicated mobile application streamlining staff management across the institution.</span><span class="ar">نشرت منصة حديثة لإدارة الموارد البشرية مع تطبيق جوّال مخصص، لتبسيط إدارة الكوادر الوظيفية عبر المؤسسة.</span></div></div>
+            <div class="achieve-card reveal d8"><div class="achieve-emoji">&#128202;</div><div class="achieve-title"><span class="en">Integrated Digital Platforms</span><span class="ar">المنصات الرقمية المتكاملة</span></div><div class="achieve-body"><span class="en">Implemented SIS, LMS, and Admissions systems &mdash; fully digitising the student lifecycle from first enquiry through to graduation.</span><span class="ar">أطلقت أنظمة SIS وLMS والقبول الإلكتروني، لترقمن دورة حياة الطالب بأكملها من أول استفسار حتى التخرج.</span></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+    <div class="container">
+        <div style="display:flex;align-items:center;justify-content:center;gap:1rem;padding:3rem 0 2rem;">
+            <div style="height:1px;width:80px;background:linear-gradient(90deg,transparent,var(--gold-border-h));"></div>
+            <span style="color:var(--gold-400);font-size:0.65rem;">&#10022;</span>
+            <span style="color:var(--gold-400);">&#10022;</span>
+            <span style="color:var(--gold-400);font-size:0.65rem;">&#10022;</span>
+            <div style="height:1px;width:80px;background:linear-gradient(90deg,var(--gold-border-h),transparent);"></div>
+        </div>
+        <div class="footer-name">
+            <span class="en">Dr. Naglaa Mohamed Madbouly Ayad</span>
+            <span class="ar">د. نجلاء محمد مدبولي عياد</span>
+        </div>
+        <div class="footer-sub">
+            <span class="en">Educator &nbsp;&middot;&nbsp; Pioneer &nbsp;&middot;&nbsp; Scholar &nbsp;&middot;&nbsp; Leader</span>
+            <span class="ar">معلمة &nbsp;&middot;&nbsp; رائدة &nbsp;&middot;&nbsp; عالمة &nbsp;&middot;&nbsp; قائدة</span>
+        </div>
+        <div class="footer-gems">
+            <div class="ln"></div>
+            <span class="gem" style="font-size:0.65rem;">&#10022;</span>
+            <span class="gem">&#10022;</span>
+            <span class="gem" style="font-size:0.65rem;">&#10022;</span>
+            <div class="ln"></div>
+        </div>
+        <div class="footer-bottom">
+            <span class="en">A Life Celebrated &nbsp;&middot;&nbsp; A Legacy Enduring</span>
+            <span class="ar">حياة تُحتفى بها &nbsp;&middot;&nbsp; وإرث باقٍ للأجيال</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+// ── CANVAS PARTICLES ──────────────────────────────────────────────
+const canvas = document.getElementById('canvas-bg');
+const ctx    = canvas.getContext('2d');
+let W, H, particles = [];
+const COUNT = 70;
+function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+resize();
+window.addEventListener('resize', resize);
+function makeColor() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const a = Math.random() * (isDark ? 0.55 : 0.28) + 0.06;
+    const t = isDark
+        ? ['rgba(212,160,23,'+a+')','rgba(255,255,255,'+(a*0.3)+')','rgba(200,170,80,'+(a*0.7)+')']
+        : ['rgba(184,120,10,'+a+')','rgba(200,160,60,'+(a*0.8)+')','rgba(160,120,40,'+(a*0.5)+')'];
+    return t[Math.floor(Math.random() * t.length)];
+}
+class Particle {
+    constructor() { this.init(); }
+    init() { this.x=Math.random()*W;this.y=Math.random()*H;this.r=Math.random()*1.6+0.3;this.vx=(Math.random()-.5)*.22;this.vy=(Math.random()-.5)*.22;this.color=makeColor(); }
+    step() { this.x+=this.vx;this.y+=this.vy;if(this.x<-5||this.x>W+5||this.y<-5||this.y>H+5)this.init(); }
+    draw() { ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=this.color;ctx.fill(); }
+}
+for(let i=0;i<COUNT;i++) particles.push(new Particle());
+function loop() { ctx.clearRect(0,0,W,H);particles.forEach(p=>{p.step();p.draw();});requestAnimationFrame(loop); }
+loop();
+
+// ── PAGE LOADER ───────────────────────────────────────────────────
+const loader = document.getElementById('page-loader');
+window.addEventListener('load', () => { setTimeout(()=>{ loader.classList.add('hidden');setTimeout(()=>loader.remove(),750); },1700); });
+
+// ── READING PROGRESS ──────────────────────────────────────────────
+const progressBar = document.getElementById('progress-bar');
+function updateProgress() { const s=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight);progressBar.style.width=(s*100).toFixed(2)+'%'; }
+window.addEventListener('scroll', updateProgress, {passive:true});
+
+// ── THEME TOGGLE ──────────────────────────────────────────────────
+const html        = document.documentElement;
+const themeToggle = document.getElementById('themeToggle');
+const savedTheme  = localStorage.getItem('naglaa-theme') || 'light';
+html.setAttribute('data-theme', savedTheme);
+themeToggle.addEventListener('click', () => {
+    const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('naglaa-theme', next);
+    particles.forEach(p => { p.color = makeColor(); });
+});
+
+// ── LANGUAGE TOGGLE ───────────────────────────────────────────────
+const langBtn   = document.getElementById('langBtn');
+const langLabel = document.getElementById('langLabel');
+const savedLang = localStorage.getItem('naglaa-lang') || 'en';
+function applyLang(lang) {
+    html.setAttribute('lang', lang);
+    langLabel.textContent = lang === 'ar' ? 'English' : 'عربي';
+    localStorage.setItem('naglaa-lang', lang);
+}
+applyLang(savedLang);
+langBtn.addEventListener('click', () => {
+    applyLang(html.getAttribute('lang') === 'en' ? 'ar' : 'en');
+});
+
+// ── NAVBAR ────────────────────────────────────────────────────────
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); });
+const burger   = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+// ── SCROLL REVEAL ─────────────────────────────────────────────────
+const revealEls = document.querySelectorAll('.reveal, .reveal-l, .reveal-r');
+const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in-view'); });
+}, {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
+revealEls.forEach(el => revealObs.observe(el));
+
+// ── COUNTERS ──────────────────────────────────────────────────────
+function countUp(el, target, suffix, dur) {
+    dur = dur || 1400; let c=0;
+    const step = Math.ceil(target/(dur/16));
+    const t = setInterval(()=>{ c=Math.min(c+step,target);el.textContent=c+(suffix||'');if(c>=target)clearInterval(t); },16);
+}
+const statsObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+        if(!e.isIntersecting) return;
+        const id = e.target.id;
+        if(id==='stat-years') countUp(e.target,40,'+');
+        if(id==='stat-unis')  countUp(e.target,3,'',900);
+        if(id==='stat-confs') countUp(e.target,4,'',900);
+        statsObs.unobserve(e.target);
+    });
+},{threshold:0.5});
+['stat-years','stat-unis','stat-confs'].forEach(id=>{ const el=document.getElementById(id);if(el)statsObs.observe(el); });
+
+// ── TYPEWRITER ────────────────────────────────────────────────────
+const enWords = ['Educator','Pioneer','Scholar','Leader','Innovator','Visionary'];
+const arWords = ['معلمة','رائدة','عالمة','قائدة','مبدعة','بصيرة'];
+let twTimer = null;
+function startTypewriter() {
+    const rolesEl = document.getElementById('heroRoles');
+    if (!rolesEl || twTimer) return;
+    // Hide static bilingual spans and use a dedicated live span
+    rolesEl.querySelectorAll('span.en, span.ar').forEach(s => { s.style.display = 'none'; });
+    const tw = document.createElement('span');
+    tw.style.color = 'var(--gold-400)';
+    rolesEl.appendChild(tw);
+    const cursor = document.createElement('span');
+    cursor.className = 'tw-cursor';
+    tw.appendChild(cursor);
+    let wi = 0, ci = 0, deleting = false, paused = false;
+    function step() {
+        const words = (html.getAttribute('lang') === 'ar') ? arWords : enWords;
+        if (paused) { paused = false; twTimer = setTimeout(step, 1800); return; }
+        const word = words[wi % words.length];
+        if (!deleting) {
+            tw.textContent = word.slice(0, ++ci);
+            tw.appendChild(cursor);
+            if (ci === word.length) { deleting = true; paused = true; twTimer = setTimeout(step, 50); return; }
+        } else {
+            tw.textContent = word.slice(0, --ci);
+            tw.appendChild(cursor);
+            if (ci === 0) { deleting = false; wi++; }
+        }
+        twTimer = setTimeout(step, deleting ? 55 : 95);
+    }
+    twTimer = setTimeout(step, 2400);
+}
+window.addEventListener('load', () => { setTimeout(startTypewriter, 2000); });
+
+// ── PARALLAX HERO ─────────────────────────────────────────────────
+const heroBadge=document.querySelector('.hero-badge'),heroName=document.querySelector('.hero-name'),heroRolesP=document.querySelector('.hero-roles'),heroOrn=document.querySelector('.hero-ornament'),heroPill=document.querySelector('.hero-pillars');
+window.addEventListener('scroll',()=>{
+    const y=window.scrollY;
+    if(y<window.innerHeight*1.2){
+        if(heroBadge) heroBadge.style.transform=`translateY(${y*.12}px)`;
+        if(heroName)  heroName.style.transform=`translateY(${y*.22}px)`;
+        if(heroRolesP) heroRolesP.style.transform=`translateY(${y*.15}px)`;
+        if(heroOrn)   heroOrn.style.transform=`translateY(${y*.1}px)`;
+        if(heroPill)  heroPill.style.transform=`translateY(${y*.08}px)`;
+    }
+},{passive:true});
+
+// ── ACTIVE NAV ────────────────────────────────────────────────────
+const allSections = document.querySelectorAll('section[id]');
+const allNavLinks = document.querySelectorAll('.nav-links a');
+const activeObs  = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            allNavLinks.forEach(a => {
+                a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+            });
+        }
+    });
+}, { rootMargin: '-35% 0px -60% 0px' });
+allSections.forEach(s => activeObs.observe(s));
+
+// ── CARD SPOTLIGHT ────────────────────────────────────────────────
+document.querySelectorAll('.career-card,.lead-card,.achieve-card,.badge-card,.conf-card').forEach(card=>{
+    card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect();card.style.setProperty('--mx',((e.clientX-r.left)/r.width*100).toFixed(1)+'%');card.style.setProperty('--my',((e.clientY-r.top)/r.height*100).toFixed(1)+'%');});
+});
+
+// ── 3D TILT ───────────────────────────────────────────────────────
+function addTilt(sel,deg){
+    document.querySelectorAll(sel).forEach(el=>{
+        el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect();const dx=((e.clientX-r.left)/r.width-.5)*2;const dy=((e.clientY-r.top)/r.height-.5)*2;el.style.transform=`perspective(900px) rotateY(${dx*deg}deg) rotateX(${-dy*deg}deg) translateY(-6px) scale(1.01)`;});
+        el.addEventListener('mouseleave',()=>{el.style.transform='';});
+    });
+}
+addTilt('.career-card',5);addTilt('.lead-card',4);addTilt('.achieve-card',6);addTilt('.conf-card',5);
+
+// ── MAGNETIC TOGGLE ───────────────────────────────────────────────
+const toggleBtn=document.getElementById('themeToggle');
+document.addEventListener('mousemove',e=>{
+    const r=toggleBtn.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;
+    const dx=e.clientX-cx,dy=e.clientY-cy,dist=Math.sqrt(dx*dx+dy*dy);
+    if(dist<120){const pull=((120-dist)/120)*14;toggleBtn.style.transform=`translate(${(dx/dist)*pull}px,${(dy/dist)*pull}px) scale(1.08)`;}
+    else{toggleBtn.style.transform='';}
+},{passive:true});
+
+// ── SECTION DIVIDERS ──────────────────────────────────────────────
+document.querySelectorAll('section+section,footer').forEach(el=>{const d=document.createElement('div');d.className='section-divider';el.parentNode.insertBefore(d,el);});
+</script>
 </body>
 </html>
