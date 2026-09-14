@@ -476,44 +476,123 @@
         @keyframes bobble   { 0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(-10px);} }
 
         /* RESPONSIVE */
+        /* ── Global overflow guard ── */
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+            min-width: 0; /* prevents grid/flex children from blowing out */
+        }
+        /* Clamp big-quote so it never causes overflow */
+        .big-quote { font-size: clamp(4rem, 18vw, 8rem); }
+        /* Hero badge wraps gracefully */
+        .hero-badge { flex-wrap: wrap; text-align: center; }
+        /* Orbs are fixed so won't scroll, but clip them */
+        .orb { overflow: hidden; }
+        /* Watermark text must not overflow */
+        .phd-main::after { overflow: hidden; white-space: nowrap; }
+        /* Hero pillars: don't let long labels overflow */
+        .pillar-lbl { white-space: nowrap; }
+
         @media (max-width:1024px) {
-            .phd-grid{grid-template-columns:1fr;}
-            .school-grid{grid-template-columns:1fr;gap:3rem;}
-            .timeline::before{left:28px;}
-            html[lang="ar"] .timeline::before{left:auto;right:28px;}
-            .tl-item{grid-template-columns:56px 1fr;}
-            html[lang="ar"] .tl-item{grid-template-columns:1fr 56px;}
-            .tl-item:nth-child(odd) .tl-card,.tl-item:nth-child(even) .tl-card{grid-column:2;text-align:left;}
-            html[lang="ar"] .tl-item:nth-child(odd) .tl-card,html[lang="ar"] .tl-item:nth-child(even) .tl-card{grid-column:1;text-align:right;}
-            .tl-item:nth-child(odd) .tl-empty,.tl-item:nth-child(even) .tl-empty{display:none;}
-            .tl-node{grid-column:1;}
-            html[lang="ar"] .tl-node{grid-column:2;}
+            .phd-grid { grid-template-columns:1fr; }
+            .school-grid { grid-template-columns:1fr; gap:3rem; }
+            .timeline::before { left:28px; }
+            html[lang="ar"] .timeline::before { left:auto; right:28px; }
+            .tl-item { grid-template-columns:56px 1fr; }
+            html[lang="ar"] .tl-item { grid-template-columns:1fr 56px; }
+            .tl-item:nth-child(odd) .tl-card,
+            .tl-item:nth-child(even) .tl-card { grid-column:2; text-align:left; }
+            html[lang="ar"] .tl-item:nth-child(odd) .tl-card,
+            html[lang="ar"] .tl-item:nth-child(even) .tl-card { grid-column:1; text-align:right; }
+            .tl-item:nth-child(odd) .tl-empty,
+            .tl-item:nth-child(even) .tl-empty { display:none; }
+            .tl-node { grid-column:1; }
+            html[lang="ar"] .tl-node { grid-column:2; }
+            /* RTL timeline overrides no longer needed at tablet */
+            html[lang="ar"] .tl-item:nth-child(odd) .tl-card  { grid-column:1; }
+            html[lang="ar"] .tl-item:nth-child(even) .tl-card { grid-column:1; }
+            html[lang="ar"] .tl-item:nth-child(odd) .tl-empty,
+            html[lang="ar"] .tl-item:nth-child(even) .tl-empty { display:none; }
         }
         @media (max-width:768px) {
-            .nav{padding:1rem 1.5rem;}.nav.scrolled{padding:0.7rem 1.5rem;}
-            .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:1.5rem;gap:1.2rem;border-bottom:1px solid var(--gold-border);box-shadow:var(--sh-md);}
-            html[data-theme="light"] .nav-links{background:rgba(250,247,242,0.98);}
-            html[data-theme="dark"]  .nav-links{background:rgba(8,12,25,0.97);}
-            .nav-links.open{display:flex;}
-            .nav-hamburger{display:flex;}
-            .hero-pillars{gap:2rem;}
-            .hero-pillar::after{display:none;}
-            .leadership-grid{grid-template-columns:1fr;}
-            .photo-grid{grid-template-columns:1fr;}
-            .photo-grid .photo-slot:first-child{grid-column:1;}
-            .achieve-grid{grid-template-columns:1fr 1fr;}
-            .theme-toggle{bottom:1.2rem;right:1.2rem;width:48px;height:48px;}
-            html[lang="ar"] .theme-toggle{right:auto;left:1.2rem;}
-            .lang-btn{bottom:1.2rem;right:5rem;height:48px;}
-            html[lang="ar"] .lang-btn{right:auto;left:5rem;}
+            .nav { padding:1rem 1.5rem; }
+            .nav.scrolled { padding:0.7rem 1.5rem; }
+            .nav-links {
+                display:none; position:absolute; top:100%; left:0; right:0;
+                flex-direction:column; padding:1.5rem; gap:1.2rem;
+                border-bottom:1px solid var(--gold-border); box-shadow:var(--sh-md);
+            }
+            html[data-theme="light"] .nav-links { background:rgba(250,247,242,0.98); }
+            html[data-theme="dark"]  .nav-links { background:rgba(8,12,25,0.97); }
+            .nav-links.open { display:flex; }
+            .nav-hamburger { display:flex; }
+            /* Hero */
+            .hero-pillars { gap:1.5rem; flex-wrap:wrap; justify-content:center; }
+            .hero-pillar::after { display:none; }
+            .hero-ornament .line { width:40px; }
+            /* Grids */
+            .leadership-grid { grid-template-columns:1fr; }
+            .photo-grid { grid-template-columns:1fr; }
+            .photo-grid .photo-slot:first-child { grid-column:1; }
+            .achieve-grid { grid-template-columns:1fr 1fr; }
+            /* School grid already 1-col at 1024, ensure order resets */
+            html[lang="ar"] .school-text { order:unset; }
+            html[lang="ar"] .school-grid > div:nth-child(2) { order:unset; }
+            /* Fixed buttons — keep fully inside viewport */
+            .theme-toggle { bottom:1.2rem; right:1.2rem; width:48px; height:48px; }
+            html[lang="ar"] .theme-toggle { right:auto; left:1.2rem; }
+            .lang-btn {
+                bottom:1.2rem; right:4.8rem; height:48px;
+                min-width:unset; padding:0 0.9rem; font-size:0.8rem;
+            }
+            html[lang="ar"] .lang-btn { right:auto; left:4.8rem; }
+            /* Sections padding */
+            .school-section,
+            .education-section,
+            .phd-section,
+            .career-section,
+            .leadership-section,
+            .achievements-section { padding:6rem 0; }
+            /* Cards full-width padding */
+            .tl-card, .lead-card, .badge-card,
+            .career-card, .achieve-card { padding:1.6rem 1.2rem; }
+            .phd-main { padding:2rem 1.4rem; }
+            /* Quote */
+            .big-quote { font-size:clamp(3rem,14vw,6rem); }
         }
         @media (max-width:480px) {
-            .achieve-grid{grid-template-columns:1fr;}
-            .conf-grid{grid-template-columns:1fr;}
-            .hero-ornament .line{width:50px;}
-            .container{padding:0 1.2rem;}
-            .lang-btn{right:4.5rem;}
-            html[lang="ar"] .lang-btn{right:auto;left:4.5rem;}
+            .achieve-grid { grid-template-columns:1fr; }
+            .conf-grid { grid-template-columns:1fr; }
+            .hero-ornament .line { width:28px; }
+            .container { padding:0 1rem; }
+            /* Buttons tighter on tiny screens */
+            .lang-btn { right:4.2rem; padding:0 0.7rem; }
+            html[lang="ar"] .lang-btn { right:auto; left:4.2rem; }
+            /* Hero badge smaller */
+            .hero-badge { font-size:0.62rem; padding:0.45rem 1rem; gap:0.4rem; }
+            /* Hero pillars tighter */
+            .hero-pillars { gap:1rem; }
+            .pillar-val { font-size:2rem; }
+            .pillar-lbl { font-size:0.68rem; }
+            /* Career grid single col */
+            .career-grid { grid-template-columns:1fr; }
+            /* PHD watermark hidden on tiny screens */
+            .phd-main::after { display:none; }
+            /* Lead number hidden on tiny screens */
+            .lead-number { display:none; }
+        }
+        @media (max-width:360px) {
+            .hero-ornament .line { width:18px; }
+            .hero-badge { font-size:0.58rem; letter-spacing:0.08em; }
+            html[lang="ar"] .hero-badge { letter-spacing:0; }
+            .section-title { font-size:1.55rem; }
+            .theme-toggle { width:42px; height:42px; right:0.9rem; bottom:0.9rem; }
+            html[lang="ar"] .theme-toggle { right:auto; left:0.9rem; }
+            .lang-btn { right:3.8rem; height:42px; }
+            html[lang="ar"] .lang-btn { right:auto; left:3.8rem; }
         }
     </style>
 </head>
