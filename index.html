@@ -300,10 +300,14 @@
             visibility: hidden;
         }
 
-        .loader-gem {
-            color: var(--gold-400);
-            font-size: 1.8rem;
-            animation: spin 2s linear infinite;
+        .loader-logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--gold-border);
+            box-shadow: 0 0 25px rgba(212, 160, 23, 0.35);
+            animation: spin 3s linear infinite;
             display: inline-block;
         }
 
@@ -2955,7 +2959,7 @@
 
     <!-- PAGE LOADER -->
     <div id="page-loader">
-        <div class="loader-gem">&#10022;</div>
+        <img src="assets/main_logo.png" alt="Prof. Naglaa Ayad Logo" class="loader-logo">
         <div class="loader-name">
             <span class="en">Prof. Naglaa Ayad</span>
             <span class="ar">د. نجلاء عياد</span>
