@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>د. نجلاء محمد مدبولي عياد — Prof. Naglaa Mohamed Madbouly Ayad</title>
+    <title>Prof. Naglaa Mohamed Madbouly Ayad — Chairman of the Board of Directors | Cairo Higher Institute for Engineering, Computer Science &amp; Management</title>
     <meta name="description"
-        content="A celebration of the remarkable life journey of Prof. Naglaa Mohamed Madbouly Ayad — مسيرة استثنائية في حياة د. نجلاء محمد مدبولي عياد">
+        content="Official biography of Prof. Naglaa Mohamed Madbouly Ayad — Chairman of the Board of Directors of Cairo Higher Institute for Engineering, Computer Science &amp; Management | رئيس مجلس إدارة معهد القاهرة العالي للهندسة والحاسب الآلي والإدارة">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -884,9 +884,76 @@
             font-style: italic;
             color: var(--gold-400);
             letter-spacing: 0.08em;
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
             animation: fadeUp 0.9s var(--ease) 0.5s both;
             min-height: 2em;
+        }
+
+        .hero-executive-banner {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0.5rem auto 2.5rem;
+            padding: 0.9rem 2.2rem;
+            border-radius: 60px;
+            background: linear-gradient(135deg, rgba(212, 160, 23, 0.12) 0%, rgba(184, 120, 10, 0.22) 100%);
+            border: 1.5px solid var(--gold-border-h);
+            box-shadow: 0 10px 35px rgba(184, 120, 10, 0.16);
+            backdrop-filter: blur(10px);
+            max-width: 92%;
+            animation: fadeUp 0.9s var(--ease) 0.55s both;
+            transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+        }
+        .hero-executive-banner:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 45px rgba(184, 120, 10, 0.28);
+        }
+        .exec-badge-gold {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            text-align: left;
+        }
+        html[lang="ar"] .exec-badge-gold {
+            text-align: right;
+            flex-direction: row-reverse;
+        }
+        .exec-seal {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            filter: drop-shadow(0 3px 10px rgba(184, 120, 10, 0.35));
+            flex-shrink: 0;
+        }
+        .exec-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .exec-role {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--text-heading);
+            letter-spacing: 0.02em;
+            line-height: 1.25;
+        }
+        html[lang="ar"] .exec-role {
+            font-family: 'Cairo', sans-serif;
+            font-weight: 800;
+            font-size: 1.15rem;
+        }
+        .exec-inst {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gold-400);
+            letter-spacing: 0.03em;
+            margin-top: 0.2rem;
+        }
+        html[lang="ar"] .exec-inst {
+            font-family: 'Cairo', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
         }
 
         .hero-ornament {
@@ -2961,8 +3028,8 @@
     <div id="page-loader">
         <img src="assets/main_logo.png" alt="Prof. Naglaa Ayad Logo" class="loader-logo">
         <div class="loader-name">
-            <span class="en">Prof. Naglaa Ayad</span>
-            <span class="ar">د. نجلاء عياد</span>
+            <span class="en">Prof. Naglaa Ayad &bull; Chairman of the Board</span>
+            <span class="ar">أ.د. نجلاء عياد &bull; رئيس مجلس الإدارة</span>
         </div>
         <div class="loader-bar-wrap">
             <div class="loader-bar"></div>
@@ -3039,8 +3106,8 @@
     <section class="hero" id="home">
         <div class="hero-badge">
             <span style="font-size:0.6rem;">&#10022;</span>
-            <span class="en">A Life of Excellence &amp; Enduring Impact</span>
-            <span class="ar">مسيرة من التميز والأثر الدائم</span>
+            <span class="en">Chairman of the Board of Directors &nbsp;&middot;&nbsp; Executive Leadership</span>
+            <span class="ar">رئيس مجلس الإدارة &nbsp;&middot;&nbsp; القيادة التنفيذية العليا</span>
             <span style="font-size:0.6rem;">&#10022;</span>
         </div>
         <h1 class="hero-name">
@@ -3053,11 +3120,24 @@
                 <span class="ar">عياد</span>
             </span>
         </h1>
+        <div class="hero-executive-banner">
+            <div class="exec-badge-gold">
+                <img src="assets/R.png" alt="Cairo Higher Institute Seal" class="exec-seal">
+                <div class="exec-text">
+                    <div class="exec-role">
+                        <span class="en">Chairman of the Board of Directors</span>
+                        <span class="ar">رئيس مجلس الإدارة</span>
+                    </div>
+                    <div class="exec-inst">
+                        <span class="en">Cairo Higher Institute for Engineering, Computer Science &amp; Management</span>
+                        <span class="ar">معهد القاهرة العالي للهندسة والحاسب الآلي والإدارة</span>
+                    </div>
+                </div>
+            </div>
+        </div>
         <p class="hero-roles" id="heroRoles">
-            <span class="en">Educator &nbsp;&middot;&nbsp; Pioneer &nbsp;&middot;&nbsp; Scholar &nbsp;&middot;&nbsp;
-                Leader</span>
-            <span class="ar">معلمة &nbsp;&middot;&nbsp; رائدة &nbsp;&middot;&nbsp; عالمة &nbsp;&middot;&nbsp;
-                قائدة</span>
+            <span class="en">Educational Pioneer &nbsp;&middot;&nbsp; Academic Governance &nbsp;&middot;&nbsp; Visionary Leader</span>
+            <span class="ar">رائدة تعليمية &nbsp;&middot;&nbsp; الحوكمة الأكاديمية &nbsp;&middot;&nbsp; قائدة استراتيجية</span>
         </p>
         <div class="hero-ornament">
             <span class="line"></span>
@@ -3124,17 +3204,14 @@
                     <span>&#10022;</span>
                 </div>
                 <h2 class="section-title reveal d1">
-                    <span class="en">Cairo Higher Institute &mdash; <span class="gold">Chairman of the
-                            Board</span></span>
-                    <span class="ar">معهد القاهرة العالي &mdash; <span class="gold">رئيس مجلس الإدارة</span></span>
+                    <span class="en">Cairo Higher Institute for Engineering, Computer Science &amp; Management <br><span class="gold">Chairman of the Board of Directors</span></span>
+                    <span class="ar">معهد القاهرة العالي للهندسة والحاسب الآلي والإدارة <br><span class="gold">رئيس مجلس الإدارة</span></span>
                 </h2>
-                <p class="section-desc reveal d2 en" style="max-width: 800px; margin: 0 auto;">
-                    Leading higher educational institutions with strategic foresight, institutional wisdom, and an
-                    unyielding commitment to academic quality and innovation.
+                <p class="section-desc reveal d2 en" style="max-width: 850px; margin: 0 auto;">
+                    Leading Cairo Higher Institute for Engineering, Computer Science and Management with strategic foresight, institutional wisdom, and an unyielding commitment to academic quality and innovation.
                 </p>
-                <p class="section-desc reveal d2 ar" style="max-width: 800px; margin: 0 auto;">
-                    قيادة معهد القاهرة العالي برؤية استراتيجية ثاقبة وحكمة مؤسسية، والتزام مطلق بأعلى معايير
-                    الجودة والابتكار الأكاديمي.
+                <p class="section-desc reveal d2 ar" style="max-width: 850px; margin: 0 auto;">
+                    قيادة معهد القاهرة العالي للهندسة والحاسب الآلي والإدارة برؤية استراتيجية ثاقبة وحكمة مؤسسية، والتزام مطلق بأعلى معايير الجودة والابتكار الأكاديمي.
                 </p>
             </div>
 
@@ -3147,23 +3224,18 @@
                             <span class="ar">القيادة التنفيذية وحوكمة المؤسسات</span>
                         </span>
                         <h3 class="role-title-large">
-                            <span class="en">Cairo Higher Institute</span>
-                            <span class="ar">معهد القاهرة العالي</span>
+                            <span class="en">Cairo Higher Institute for Engineering, Computer Science &amp; Management</span>
+                            <span class="ar">معهد القاهرة العالي للهندسة والحاسب الآلي والإدارة</span>
                         </h3>
                         <h4 style="font-size: 1.3rem; color: var(--gold-400); margin-bottom: 1.2rem; font-weight: 700;">
                             <span class="en">Chairman of the Board of Directors</span>
                             <span class="ar">رئيس مجلس الإدارة</span>
                         </h4>
                         <p class="role-lead-desc en">
-                            At the helm of Cairo Higher Institute, Prof. Naglaa Mohamed Madbouly Ayad directs strategic
-                            governance, fosters academic distinction, and champions transformative educational
-                            standards. Her vision ensures that the institute remains a beacon of academic rigor and
-                            student empowerment.
+                            At the helm of Cairo Higher Institute for Engineering, Computer Science and Management, Prof. Naglaa Mohamed Madbouly Ayad directs strategic governance, fosters academic distinction across engineering, computer science, and management disciplines, and champions transformative educational standards. Her vision ensures that the institute remains a beacon of academic rigor and student empowerment.
                         </p>
                         <p class="role-lead-desc ar">
-                            في قمة الهرم القيادي لمعهد القاهرة العالي، تتولى الأستاذة الدكتورة نجلاء محمد مدبولي عياد
-                            توجيه الحوكمة الاستراتيجية، وترسيخ التميز الأكاديمي، ورعاية معايير التعليم التحولي. وتضمن
-                            رؤيتها الثاقبة استمرار المعهد كمنارة علمية مرموقة لتمكين الأجيال القادمة.
+                            في قمة الهرم القيادي لمعهد القاهرة العالي للهندسة والحاسب الآلي والإدارة، تتولى الأستاذة الدكتورة نجلاء محمد مدبولي عياد توجيه الحوكمة الاستراتيجية، وترسيخ التميز الأكاديمي في تخصصات الهندسة والحاسب الآلي والإدارة، ورعاية معايير التعليم التحولي. وتضمن رؤيتها الثاقبة استمرار المعهد كمنارة علمية مرموقة لتمكين الأجيال القادمة.
                         </p>
                         <div class="role-stats-pills">
                             <div class="role-pill">
@@ -3178,8 +3250,8 @@
                             </div>
                             <div class="role-pill">
                                 <span style="color:var(--gold-400);">&#9881;</span>
-                                <span class="en">Academic Governance</span>
-                                <span class="ar">الحوكمة الأكاديمية</span>
+                                <span class="en">Engineering &bull; Computer Science &bull; Management</span>
+                                <span class="ar">الهندسة &bull; الحاسب الآلي &bull; الإدارة</span>
                             </div>
                         </div>
                     </div>
@@ -3777,14 +3849,12 @@
                 <div class="career-card reveal d4">
                     <div class="career-icon-wrap"><img src="assets/R.png" alt="Cairo Higher Institute Logo"
                             class="career-logo-img"></div>
-                    <div class="career-name"><span class="en">Cairo Higher Institute</span><span class="ar">معهد
-                            القاهرة العالي</span></div>
+                    <div class="career-name"><span class="en">Cairo Higher Institute for Engineering, Computer Science &amp; Management</span><span class="ar">معهد القاهرة العالي للهندسة والحاسب الآلي والإدارة</span></div>
                     <div class="career-role"><span class="en">Chairman of the Board of Directors</span><span
                             class="ar">رئيس مجلس الإدارة</span></div>
-                    <div class="career-body"><span class="en">Appointed Chairman of the Cairo Higher Institute for
-                            Engineering, Computer Science and Management &mdash; where her most transformative and
-                            far-reaching work truly began.</span><span class="ar">عُيّنت رئيسًا لمجلس إدارة معهد
-                            القاهرة العالي للهندسة وعلوم الحاسب والإدارة، حيث انطلق أعمق أثرها وأبعد رؤيتها
+                    <div class="career-body"><span class="en">Appointed Chairman of the Board of Directors of Cairo Higher Institute for
+                            Engineering, Computer Science and Management &mdash; directing executive governance and far-reaching educational innovation.</span><span class="ar">عُيّنت رئيسًا لمجلس إدارة معهد
+                            القاهرة العالي للهندسة والحاسب الآلي والإدارة، حيث انطلق أعمق أثرها وأبعد رؤيتها
                             الإصلاحية.</span></div>
                 </div>
             </div>
@@ -3801,9 +3871,9 @@
                     <span class="en">Leadership &amp; <span class="gold">Transformation</span></span>
                     <span class="ar">القيادة و<span class="gold">التحول</span></span>
                 </h2>
-                <p class="section-desc reveal d2 en">At the helm of Cairo Higher Institute &mdash; a visionary
+                <p class="section-desc reveal d2 en">At the helm of Cairo Higher Institute for Engineering, Computer Science and Management &mdash; a visionary
                     restructuring that completely redefined the institution for the modern age.</p>
-                <p class="section-desc reveal d2 ar">على رأس معهد القاهرة العالي &mdash; إصلاح شامل وبعيد النظر أعاد
+                <p class="section-desc reveal d2 ar">على رأس معهد القاهرة العالي للهندسة والحاسب الآلي والإدارة &mdash; إصلاح شامل وبعيد النظر أعاد
                     تشكيل المؤسسة من أساسها لمواكبة العصر.</p>
             </div>
             <div class="leadership-grid">
