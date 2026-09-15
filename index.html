@@ -2544,6 +2544,383 @@
                 left: 3.8rem;
             }
         }
+
+        /* ============================================================
+           RECENT PROGRESS & CAIRO HIGHER INSTITUTES SECTION
+        ============================================================ */
+        .recent-progress-section {
+            padding: 7rem 0 8rem;
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid var(--gold-border);
+            border-bottom: 1px solid var(--gold-border);
+        }
+
+        html[data-theme="light"] .recent-progress-section {
+            background: linear-gradient(135deg, #FFFDF9 0%, #F7F1E5 50%, #FAF5EA 100%);
+        }
+
+        html[data-theme="dark"] .recent-progress-section {
+            background: linear-gradient(135deg, #0d1326 0%, #070a14 50%, #0a0e1c 100%);
+        }
+
+        .recent-header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.45rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gold-400);
+            background: rgba(184, 120, 10, 0.08);
+            border: 1px solid var(--gold-border);
+            margin-bottom: 1rem;
+        }
+
+        html[lang="ar"] .recent-header-badge {
+            font-family: 'Cairo', sans-serif;
+            letter-spacing: 0;
+            text-transform: none;
+        }
+
+        .role-hero-card {
+            background: var(--bg-card);
+            border: 1px solid var(--gold-border);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            box-shadow: var(--sh-md);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 3.5rem;
+            transition: var(--trans);
+        }
+
+        .role-hero-card:hover {
+            border-color: var(--gold-border-h);
+            box-shadow: var(--sh-gold);
+            transform: translateY(-4px);
+        }
+
+        .role-hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--gold-300), var(--gold-500));
+        }
+
+        html[lang="ar"] .role-hero-card::before {
+            left: auto;
+            right: 0;
+        }
+
+        .role-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (max-width: 992px) {
+            .role-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .role-title-large {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            color: var(--text-heading);
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 0.5rem;
+        }
+
+        html[lang="ar"] .role-title-large {
+            font-family: 'Cairo', serif;
+            line-height: 1.4;
+        }
+
+        .role-subtitle {
+            font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+            color: var(--gold-400);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .role-lead-desc {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-body);
+            margin-bottom: 1.8rem;
+        }
+
+        html[lang="ar"] .role-lead-desc {
+            font-family: 'Cairo', sans-serif;
+            line-height: 2;
+        }
+
+        .role-stats-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .role-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            border-radius: var(--radius-sm);
+            background: var(--gold-50);
+            border: 1px solid var(--gold-border);
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-heading);
+        }
+
+        /* GALLERY OF SUPPORTING IMAGES */
+        .progress-gallery-head {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .progress-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .photo-card {
+            background: var(--bg-card);
+            border: 1px solid var(--gold-border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--sh-sm);
+            transition: var(--trans);
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold-300);
+            box-shadow: var(--sh-gold);
+        }
+
+        .photo-wrapper {
+            position: relative;
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .photo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            transition: transform 0.6s var(--ease), filter 0.4s var(--ease);
+        }
+
+        .photo-card:hover .photo-img {
+            transform: scale(1.08);
+            filter: brightness(1.05);
+        }
+
+        .photo-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%);
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .photo-card:hover .photo-overlay {
+            opacity: 0.85;
+        }
+
+        .photo-zoom-icon {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: var(--trans);
+        }
+
+        html[lang="ar"] .photo-zoom-icon {
+            right: auto;
+            left: 1rem;
+        }
+
+        .photo-card:hover .photo-zoom-icon {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .photo-caption-box {
+            padding: 1.4rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .photo-tag {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold-400);
+            margin-bottom: 0.4rem;
+            display: block;
+        }
+
+        html[lang="ar"] .photo-tag {
+            font-family: 'Cairo', sans-serif;
+            letter-spacing: 0;
+            text-transform: none;
+        }
+
+        .photo-title {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        html[lang="ar"] .photo-title {
+            font-family: 'Cairo', serif;
+        }
+
+        .photo-desc {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            line-height: 1.6;
+        }
+
+        html[lang="ar"] .photo-desc {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.8;
+        }
+
+        /* LIGHTBOX MODAL */
+        .lightbox-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(8, 11, 22, 0.92);
+            backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+        }
+
+        .lightbox-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox-box {
+            max-width: 900px;
+            width: 100%;
+            background: #0f172a;
+            border: 1px solid var(--gold-border-h);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+            position: relative;
+            transform: scale(0.92);
+            transition: transform 0.35s var(--ease);
+        }
+
+        .lightbox-modal.active .lightbox-box {
+            transform: scale(1);
+        }
+
+        .lightbox-img-wrap {
+            max-height: 65vh;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 65vh;
+            object-fit: contain;
+        }
+
+        .lightbox-details {
+            padding: 1.5rem 2rem;
+            color: #ffffff;
+            background: #0f172a;
+        }
+
+        .lightbox-caption-title {
+            font-family: 'Playfair Display', 'Cairo', serif;
+            font-size: 1.3rem;
+            color: #f5d882;
+            margin-bottom: 0.4rem;
+        }
+
+        .lightbox-caption-sub {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #ffffff;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--trans);
+            z-index: 10;
+        }
+
+        .lightbox-close:hover {
+            background: var(--gold-300);
+            color: #000;
+        }
     </style>
 </head>
 
@@ -2613,6 +2990,7 @@
             <span class="ar">د. نجلاء م. عياد</span>
         </div>
         <ul class="nav-links" id="navLinks">
+            <li><a href="#recent-progress"><span class="en">Recent Progress</span><span class="ar">المنصب الحالي</span></a></li>
             <li><a href="#school"><span class="en">School</span><span class="ar">المدرسة</span></a></li>
             <li><a href="#university"><span class="en">University</span><span class="ar">الجامعة</span></a></li>
             <li><a href="#phd"><span class="en">PhD</span><span class="ar">الدكتوراه</span></a></li>
@@ -2699,6 +3077,210 @@
             <div class="quote-attr">
                 <span class="en">&mdash; A Life Well Lived &middot; A Legacy Enduring &mdash;</span>
                 <span class="ar">&mdash; حياة بامتياز &middot; وإرث باقٍ للأجيال &mdash;</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- LATEST RECENT PROGRESS — CAIRO HIGHER INSTITUTES -->
+    <section class="recent-progress-section" id="recent-progress">
+        <div class="container">
+            <div class="section-head reveal" style="text-align: center; margin-bottom: 3.5rem;">
+                <div class="recent-header-badge">
+                    <span>&#10022;</span>
+                    <span class="en">Current Pinnacle &amp; Recent Progress</span>
+                    <span class="ar">أحدث محطات القيادة والمنصب الحالي</span>
+                    <span>&#10022;</span>
+                </div>
+                <h2 class="section-title reveal d1">
+                    <span class="en">Cairo Higher Institutes &mdash; <span class="gold">Chairman of the Board</span></span>
+                    <span class="ar">معاهد القاهرة العالية &mdash; <span class="gold">رئيس مجلس الإدارة</span></span>
+                </h2>
+                <p class="section-desc reveal d2 en" style="max-width: 800px; margin: 0 auto;">
+                    Leading higher educational institutions with strategic foresight, institutional wisdom, and an unyielding commitment to academic quality and innovation.
+                </p>
+                <p class="section-desc reveal d2 ar" style="max-width: 800px; margin: 0 auto;">
+                    قيادة منظومة معاهد القاهرة العالية برؤية استراتيجية ثاقبة وحكمة مؤسسية، والتزام مطلق بأعلى معايير الجودة والابتكار الأكاديمي.
+                </p>
+            </div>
+
+            <!-- HERO ROLE CARD -->
+            <div class="role-hero-card reveal">
+                <div class="role-grid">
+                    <div class="role-info">
+                        <span class="role-subtitle">
+                            <span class="en">Executive &amp; Governance Leadership</span>
+                            <span class="ar">القيادة التنفيذية وحوكمة المؤسسات</span>
+                        </span>
+                        <h3 class="role-title-large">
+                            <span class="en">Cairo Higher Institutes</span>
+                            <span class="ar">معاهد القاهرة العالية</span>
+                        </h3>
+                        <h4 style="font-size: 1.3rem; color: var(--gold-400); margin-bottom: 1.2rem; font-weight: 700;">
+                            <span class="en">Chairman of the Board of Directors</span>
+                            <span class="ar">رئيس مجلس الإدارة</span>
+                        </h4>
+                        <p class="role-lead-desc en">
+                            At the helm of Cairo Higher Institutes, Prof. Naglaa Mohamed Madbouly Ayad directs strategic governance, fosters academic distinction, and champions transformative educational standards. Her vision ensures that the institutes remain a beacon of academic rigor and student empowerment.
+                        </p>
+                        <p class="role-lead-desc ar">
+                            في قمة الهرم القيادي لمعاهد القاهرة العالية، تتولى الأستاذة الدكتورة نجلاء محمد مدبولي عياد توجيه الحوكمة الاستراتيجية، وترسيخ التميز الأكاديمي، ورعاية معايير التعليم التحولي. وتضمن رؤيتها الثاقبة استمرار المعاهد كمنارة علمية مرموقة لتمكين الأجيال القادمة.
+                        </p>
+                        <div class="role-stats-pills">
+                            <div class="role-pill">
+                                <span style="color:var(--gold-400);">&#9733;</span>
+                                <span class="en">Cairo Higher Institutes</span>
+                                <span class="ar">معاهد القاهرة العالية</span>
+                            </div>
+                            <div class="role-pill">
+                                <span style="color:var(--gold-400);">&#9819;</span>
+                                <span class="en">Chairman of the Board</span>
+                                <span class="ar">رئيس مجلس الإدارة</span>
+                            </div>
+                            <div class="role-pill">
+                                <span style="color:var(--gold-400);">&#9881;</span>
+                                <span class="en">Academic Governance</span>
+                                <span class="ar">الحوكمة الأكاديمية</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="role-photo-featured" onclick="openLightbox('assets/20260914_224246(1).jpg', 'Prof. Naglaa Mohamed Madbouly Ayad', 'Chairman of the Board of Directors — Cairo Higher Institutes | رئيس مجلس إدارة معاهد القاهرة العالية')">
+                        <div class="photo-card" style="height: 100%;">
+                            <div class="photo-wrapper" style="height: 340px;">
+                                <img src="assets/20260914_224246(1).jpg" alt="Prof. Naglaa Mohamed Madbouly Ayad - Chairman" class="photo-img">
+                                <div class="photo-overlay"></div>
+                                <div class="photo-zoom-icon">
+                                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                                </div>
+                            </div>
+                            <div class="photo-caption-box">
+                                <span class="photo-tag">
+                                    <span class="en">Official Leadership Portrait</span>
+                                    <span class="ar">صورة رسمية قيادية</span>
+                                </span>
+                                <h4 class="photo-title">
+                                    <span class="en">Prof. Naglaa M. Ayad</span>
+                                    <span class="ar">أ.د. نجلاء محمد عياد</span>
+                                </h4>
+                                <p class="photo-desc">
+                                    <span class="en">Chairman of the Board of Directors &mdash; Cairo Higher Institutes</span>
+                                    <span class="ar">رئيس مجلس إدارة معاهد القاهرة العالية</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GALLERY OF SUPPORTING IMAGES -->
+            <div class="progress-gallery-head reveal">
+                <h3 class="section-title" style="font-size: 1.8rem;">
+                    <span class="en">Pictorial Archive of <span class="gold">Milestones &amp; Progress</span></span>
+                    <span class="ar">الأرشيف المصور <span class="gold">للمحطات والإنجازات</span></span>
+                </h3>
+                <p class="section-desc en" style="max-width: 600px; margin: 0.5rem auto 0;">Click on any photograph to view in high resolution</p>
+                <p class="section-desc ar" style="max-width: 600px; margin: 0.5rem auto 0;">اضغط على أي صورة للعرض المكبر بدقة عالية</p>
+            </div>
+
+            <div class="progress-gallery-grid">
+                <!-- PHOTO 1 -->
+                <div class="photo-card reveal d1" onclick="openLightbox('assets/20260914_224246(1).jpg', 'Academic Leadership Portrait', 'Prof. Naglaa Mohamed Madbouly Ayad — Chairman of the Board of Directors, Cairo Higher Institutes | أ.د. نجلاء محمد مدبولي عياد — رئيس مجلس إدارة معاهد القاهرة العالية')">
+                    <div class="photo-wrapper">
+                        <img src="assets/20260914_224246(1).jpg" alt="Prof. Naglaa Ayad - Academic Portrait" class="photo-img">
+                        <div class="photo-overlay"></div>
+                        <div class="photo-zoom-icon">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                        </div>
+                    </div>
+                    <div class="photo-caption-box">
+                        <span class="photo-tag">
+                            <span class="en">Current Role</span>
+                            <span class="ar">المنصب الحالي</span>
+                        </span>
+                        <h4 class="photo-title">
+                            <span class="en">Executive Leadership</span>
+                            <span class="ar">القيادة التنفيذية</span>
+                        </h4>
+                        <p class="photo-desc">
+                            <span class="en">Chairman of the Board of Directors — Cairo Higher Institutes</span>
+                            <span class="ar">رئيس مجلس إدارة معاهد القاهرة العالية</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- PHOTO 2 -->
+                <div class="photo-card reveal d2" onclick="openLightbox('assets/20260914_224232(1).jpg', 'University of Strathclyde PhD Ceremony', 'Doctoral Graduation in Glasgow, Scotland — A historic academic milestone | حفل الحصول على درجة الدكتوراه بجامعة ستراثكلايد، غلاسكو')">
+                    <div class="photo-wrapper">
+                        <img src="assets/20260914_224232(1).jpg" alt="University of Strathclyde PhD Graduation" class="photo-img">
+                        <div class="photo-overlay"></div>
+                        <div class="photo-zoom-icon">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                        </div>
+                    </div>
+                    <div class="photo-caption-box">
+                        <span class="photo-tag">
+                            <span class="en">Doctoral Excellence</span>
+                            <span class="ar">درجة الدكتوراه</span>
+                        </span>
+                        <h4 class="photo-title">
+                            <span class="en">Strathclyde, Glasgow</span>
+                            <span class="ar">جامعة ستراثكلايد بغلاسكو</span>
+                        </h4>
+                        <p class="photo-desc">
+                            <span class="en">International PhD degree ceremony with university dignitaries</span>
+                            <span class="ar">حفل تخرج الدكتوراه الدولي برفقة أساتذة الجامعة</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- PHOTO 3 -->
+                <div class="photo-card reveal d3" onclick="openLightbox('assets/20260914_224116(1).jpg', 'Cairo University Academic Distinction', 'Graduation and scholarly success at Cairo University Faculty of Engineering | التفوق والتميز بكلية الهندسة وجامعة القاهرة')">
+                    <div class="photo-wrapper">
+                        <img src="assets/20260914_224116(1).jpg" alt="Cairo University Academic Distinction" class="photo-img">
+                        <div class="photo-overlay"></div>
+                        <div class="photo-zoom-icon">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                        </div>
+                    </div>
+                    <div class="photo-caption-box">
+                        <span class="photo-tag">
+                            <span class="en">Higher Education</span>
+                            <span class="ar">التعليم العالي</span>
+                        </span>
+                        <h4 class="photo-title">
+                            <span class="en">Cairo University</span>
+                            <span class="ar">جامعة القاهرة</span>
+                        </h4>
+                        <p class="photo-desc">
+                            <span class="en">Celebrating graduation and top academic distinction among peers</span>
+                            <span class="ar">الاحتفال بالتخرج والتميز الأكاديمي مع زملائها واساتذتها</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- PHOTO 4 -->
+                <div class="photo-card reveal d4" onclick="openLightbox('assets/Scan_20260914_223941.jpg', 'Victory College Early Beginnings', 'Early school days at Victory College Maadi — Where excellence was first nurtured | فيكتوري كوليدج المعادي — بداية رحلة التفوق والتميز')">
+                    <div class="photo-wrapper">
+                        <img src="assets/Scan_20260914_223941.jpg" alt="Victory College School Days" class="photo-img">
+                        <div class="photo-overlay"></div>
+                        <div class="photo-zoom-icon">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                        </div>
+                    </div>
+                    <div class="photo-caption-box">
+                        <span class="photo-tag">
+                            <span class="en">Foundational School</span>
+                            <span class="ar">البدايات الأولى</span>
+                        </span>
+                        <h4 class="photo-title">
+                            <span class="en">Victory College Maadi</span>
+                            <span class="ar">فيكتوري كوليدج المعادي</span>
+                        </h4>
+                        <p class="photo-desc">
+                            <span class="en">Early kindergarten class photo at Victory College Maadi</span>
+                            <span class="ar">صورة تذكارية تاريخية في الحضانة بمدارس فيكتوري كوليدج</span>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -3468,9 +4050,47 @@
             else { toggleBtn.style.transform = ''; }
         }, { passive: true });
 
+        // ── LIGHTBOX MODAL ───────────────────────────────────────────────
+        function openLightbox(src, title, sub) {
+            const modal = document.getElementById('lightboxModal');
+            const img = document.getElementById('lightboxImg');
+            const t = document.getElementById('lightboxTitle');
+            const s = document.getElementById('lightboxSub');
+            img.src = src;
+            t.textContent = title;
+            s.textContent = sub;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(e) {
+            if (e && e.target !== e.currentTarget && !e.target.classList.contains('lightbox-close')) return;
+            const modal = document.getElementById('lightboxModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
         // ── SECTION DIVIDERS ──────────────────────────────────────────────
         document.querySelectorAll('section+section,footer').forEach(el => { const d = document.createElement('div'); d.className = 'section-divider'; el.parentNode.insertBefore(d, el); });
     </script>
+
+    <!-- LIGHTBOX MODAL -->
+    <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox(event)">
+        <div class="lightbox-box" onclick="event.stopPropagation()">
+            <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image">&times;</button>
+            <div class="lightbox-img-wrap">
+                <img src="" alt="" id="lightboxImg" class="lightbox-img">
+            </div>
+            <div class="lightbox-details">
+                <h4 class="lightbox-caption-title" id="lightboxTitle"></h4>
+                <p class="lightbox-caption-sub" id="lightboxSub"></p>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
