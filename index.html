@@ -1746,8 +1746,8 @@
         }
 
         .career-icon-wrap {
-            width: 68px;
-            height: 68px;
+            width: 76px;
+            height: 76px;
             border-radius: 18px;
             border: 1px solid var(--gold-border-h);
             display: flex;
@@ -1755,15 +1755,17 @@
             justify-content: center;
             font-size: 1.9rem;
             margin: 0 auto 1.5rem;
+            overflow: hidden;
+            padding: 8px;
+            box-sizing: border-box;
+            background: #ffffff !important;
+            box-shadow: 0 4px 16px rgba(184, 120, 10, 0.12);
         }
 
-        html[data-theme="light"] .career-icon-wrap {
-            background: linear-gradient(135deg, #FDF8EC, rgba(248, 235, 180, 0.5));
-            box-shadow: 0 4px 16px rgba(184, 120, 10, 0.08);
-        }
-
-        html[data-theme="dark"] .career-icon-wrap {
-            background: linear-gradient(135deg, rgba(212, 160, 23, 0.18), rgba(212, 160, 23, 0.06));
+        .career-logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .career-name {
@@ -3688,7 +3690,7 @@
             </div>
             <div class="career-grid">
                 <div class="career-card reveal d1">
-                    <div class="career-icon-wrap">&#127963;</div>
+                    <div class="career-icon-wrap"><img src="assets/auc-logo.png" alt="AUC Logo" class="career-logo-img"></div>
                     <div class="career-name"><span class="en">American University in Cairo</span><span
                             class="ar">الجامعة الأمريكية بالقاهرة</span></div>
                     <div class="career-role"><span class="en">Academic Staff &middot; Mathematics Department</span><span
@@ -3700,7 +3702,7 @@
                             جامعات مصر.</span></div>
                 </div>
                 <div class="career-card reveal d2">
-                    <div class="career-icon-wrap">&#127891;</div>
+                    <div class="career-icon-wrap"><img src="assets/unnamed.jpg" alt="Helwan University Logo" class="career-logo-img"></div>
                     <div class="career-name"><span class="en">Helwan University</span><span class="ar">جامعة
                             حلوان</span></div>
                     <div class="career-role"><span class="en">Academic Staff Member</span><span class="ar">عضو هيئة
@@ -3712,7 +3714,7 @@
                             مصر.</span></div>
                 </div>
                 <div class="career-card reveal d3">
-                    <div class="career-icon-wrap">&#9879;</div>
+                    <div class="career-icon-wrap"><span style="font-size:1.8rem; color:var(--gold-400);">&#9881;</span></div>
                     <div class="career-name"><span class="en">Egyptian Society for Science &amp; Technology</span><span
                             class="ar">الجمعية المصرية للعلوم والتكنولوجيا</span></div>
                     <div class="career-role"><span class="en">Chairman of the Board of Directors</span><span
@@ -3724,15 +3726,15 @@
                             والتعليم.</span></div>
                 </div>
                 <div class="career-card reveal d4">
-                    <div class="career-icon-wrap">&#127959;</div>
-                    <div class="career-name"><span class="en">Cairo Higher Institute</span><span class="ar">المعهد
-                            العالي بالقاهرة</span></div>
+                    <div class="career-icon-wrap"><img src="assets/R.png" alt="Cairo Higher Institute Logo" class="career-logo-img"></div>
+                    <div class="career-name"><span class="en">Cairo Higher Institute</span><span class="ar">معاهد
+                            القاهرة العالية</span></div>
                     <div class="career-role"><span class="en">Chairman of the Board of Directors</span><span
                             class="ar">رئيس مجلس الإدارة</span></div>
                     <div class="career-body"><span class="en">Appointed Chairman of the Cairo Higher Institute for
                             Engineering, Computer Science and Management &mdash; where her most transformative and
-                            far-reaching work truly began.</span><span class="ar">عُيّنت رئيسًا لمجلس إدارة المعهد
-                            العالي للهندسة وعلوم الحاسب والإدارة بالقاهرة، حيث انطلق أعمق أثرها وأبعد رؤيتها
+                            far-reaching work truly began.</span><span class="ar">عُيّنت رئيسًا لمجلس إدارة معاهد
+                            القاهرة العالية للهندسة وعلوم الحاسب والإدارة، حيث انطلق أعمق أثرها وأبعد رؤيتها
                             الإصلاحية.</span></div>
                 </div>
             </div>
