@@ -710,15 +710,26 @@
         }
 
         .nav-logo {
-            font-family: var(--font-display);
-            font-size: 1rem;
-            color: var(--gold-400);
-            font-weight: 700;
-            letter-spacing: 0.04em;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--trans);
         }
 
-        html[lang="ar"] .nav-logo {
-            font-family: 'Cairo', serif;
+        .nav-logo:hover {
+            transform: scale(1.06);
+            opacity: 0.95;
+        }
+
+        .nav-logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 50%;
+            background: #ffffff;
+            padding: 2px;
+            box-shadow: 0 2px 10px rgba(184, 120, 10, 0.2);
         }
 
         .nav-links {
@@ -3001,10 +3012,9 @@
 
     <!-- NAVIGATION -->
     <nav class="nav" id="navbar">
-        <div class="nav-logo">
-            <span class="en">Prof. Naglaa M. Ayad</span>
-            <span class="ar">د. نجلاء م. عياد</span>
-        </div>
+        <a href="#home" class="nav-logo" aria-label="Go to top of page" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+            <img src="assets/main_logo.png" alt="Prof. Naglaa M. Ayad Logo" class="nav-logo-img">
+        </a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#recent-progress"><span class="en">Recent Progress</span><span class="ar">المنصب
                         الحالي</span></a></li>
