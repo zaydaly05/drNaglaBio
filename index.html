@@ -1361,11 +1361,11 @@
 
         /* TIMELINE */
         .education-section {
-            padding: 9rem 0;
+            padding: 8rem 0 9.5rem;
         }
 
         html[data-theme="light"] .education-section {
-            background: linear-gradient(180deg, #F5F0E6 0%, #EDE6D6 50%, #F5F0E6 100%);
+            background: linear-gradient(180deg, #F8F4EC 0%, #EEE7D9 52%, #F8F4EC 100%);
         }
 
         html[data-theme="dark"] .education-section {
@@ -1374,9 +1374,10 @@
 
         .timeline {
             position: relative;
-            max-width: 1080px;
+            max-width: 1120px;
             margin: 0 auto;
-            padding: 1rem 0 2rem;
+            padding: 1.5rem 0 2rem;
+            counter-reset: milestone;
         }
 
         .timeline::before {
@@ -1397,6 +1398,7 @@
             gap: 1.75rem;
             align-items: start;
             margin-bottom: 3.5rem;
+            counter-increment: milestone;
         }
 
         .tl-item:nth-child(odd) .tl-card {
@@ -1432,10 +1434,27 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
+            font-size: 0;
+            font-family: var(--font-body);
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            color: #ffffff;
             flex-shrink: 0;
             position: relative;
             z-index: 2;
+        }
+
+        .tl-dot::before {
+            content: counter(milestone, decimal-leading-zero);
+            font-size: 0.76rem;
+        }
+
+        .tl-dot::after {
+            content: '';
+            position: absolute;
+            inset: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
         }
 
         html[data-theme="light"] .tl-dot {
@@ -1480,6 +1499,10 @@
             position: relative;
             overflow: hidden;
             box-shadow: var(--sh-sm);
+            min-height: 255px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .tl-item:nth-child(odd) .tl-card {
@@ -1517,6 +1540,33 @@
             opacity: 1;
         }
 
+        .tl-card::after {
+            content: counter(milestone, decimal-leading-zero);
+            position: absolute;
+            top: 1rem;
+            right: 1.2rem;
+            color: var(--gold-border-h);
+            font-family: var(--font-display);
+            font-size: 2.1rem;
+            line-height: 1;
+            font-weight: 700;
+        }
+
+        html[lang="ar"] .tl-card::after {
+            right: auto;
+            left: 1.2rem;
+        }
+
+        .tl-item:nth-child(odd) .tl-card::after {
+            right: auto;
+            left: 1.2rem;
+        }
+
+        html[lang="ar"] .tl-item:nth-child(odd) .tl-card::after {
+            right: 1.2rem;
+            left: auto;
+        }
+
         .tl-card .tl-era,
         .tl-card .tl-inst,
         .tl-card .tl-deg,
@@ -1544,7 +1594,7 @@
 
         .tl-inst {
             font-family: var(--font-display);
-            font-size: 1.2rem;
+            font-size: 1.38rem;
             font-weight: 600;
             color: var(--text-heading);
             margin-bottom: 0.3rem;
@@ -1561,6 +1611,10 @@
             color: var(--gold-400);
             font-style: italic;
             margin-bottom: 0.9rem;
+            width: fit-content;
+            max-width: 100%;
+            padding-bottom: 0.55rem;
+            border-bottom: 1px solid var(--gold-border);
         }
 
         html[lang="ar"] .tl-deg {
@@ -1572,6 +1626,9 @@
             font-size: 0.87rem;
             color: var(--text-sub);
             line-height: 1.78;
+            max-width: 46ch;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         html[lang="ar"] .tl-desc {
@@ -1591,6 +1648,15 @@
             color: var(--gold-500);
             font-weight: 600;
             margin-top: 1rem;
+            align-self: flex-start;
+        }
+
+        .tl-item:nth-child(odd) .tl-badge {
+            align-self: flex-end;
+        }
+
+        html[lang="ar"] .tl-item:nth-child(odd) .tl-badge {
+            align-self: flex-start;
         }
 
         html[lang="ar"] .tl-badge {
