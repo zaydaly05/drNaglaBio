@@ -1465,7 +1465,7 @@
         }
 
         .timeline-photo-group img:hover {
-            filter: grayscale(0);
+            filter: grayscale(1);
             opacity: 1;
             transform: scale(1.04);
         }
@@ -4556,6 +4556,29 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeLightbox();
         });
+
+        // Build a filmstrip from every distinct image used in the page.
+        const timelinePhotoTrack = document.getElementById('timelinePhotoTrack');
+        if (timelinePhotoTrack) {
+            const photoSources = [...new Set([...document.querySelectorAll('img[src]')]
+                .filter(img => !img.closest('.timeline-photo-strip'))
+                .map(img => img.getAttribute('src'))
+                .filter(src => src && !src.startsWith('data:')) )];
+            const makePhotoGroup = (duplicate = false) => {
+                const group = document.createElement('div');
+                group.className = 'timeline-photo-group';
+                if (duplicate) group.setAttribute('aria-hidden', 'true');
+                photoSources.forEach(src => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = '';
+                    img.loading = 'lazy';
+                    group.appendChild(img);
+                });
+                return group;
+            };
+            timelinePhotoTrack.append(makePhotoGroup(), makePhotoGroup(true));
+        }
 
         // ── SECTION DIVIDERS ──────────────────────────────────────────────
         document.querySelectorAll('section+section,footer').forEach(el => { const d = document.createElement('div'); d.className = 'section-divider'; el.parentNode.insertBefore(d, el); });
