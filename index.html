@@ -1425,18 +1425,53 @@
             left: 50%;
             transform: translateX(-50%);
             overflow: hidden;
-            padding: 1rem 0;
-            margin: 1.5rem 0 0;
-            border-top: 1px solid var(--gold-border-h);
-            border-bottom: 1px solid var(--gold-border-h);
-            background: rgba(255, 255, 255, 0.28);
-            -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
-            mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+            padding: 1.5rem 0 1.7rem;
+            margin: 2.5rem 0 0;
+            border-top: 1px solid rgba(212, 160, 23, 0.42);
+            border-bottom: 1px solid rgba(212, 160, 23, 0.3);
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(212, 160, 23, 0.13), transparent 58%),
+                linear-gradient(110deg, #111827 0%, #202431 48%, #111827 100%);
+            box-shadow: 0 18px 48px rgba(17, 24, 39, 0.14);
+        }
+
+        .timeline-photo-heading {
+            position: relative;
+            z-index: 1;
+            margin: 0 auto 1.15rem;
+            padding: 0 1.25rem;
+            text-align: center;
+        }
+
+        .timeline-photo-heading .eyebrow {
+            display: block;
+            margin-bottom: 0.3rem;
+            color: #e2bb62;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+        }
+
+        .timeline-photo-heading h3 {
+            margin: 0;
+            color: #fff;
+            font-family: var(--font-display);
+            font-size: clamp(1.15rem, 2.3vw, 1.65rem);
+            font-weight: 600;
+            letter-spacing: 0.015em;
+        }
+
+        .timeline-photo-heading p {
+            margin: 0.3rem 0 0;
+            color: #c5cad3;
+            font-size: 0.88rem;
         }
 
         .timeline-photo-track {
             display: flex;
             width: max-content;
+            will-change: transform;
             animation: timeline-photo-scroll 70s linear infinite;
         }
 
@@ -1447,27 +1482,28 @@
         .timeline-photo-group {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            padding-right: 1rem;
+            gap: 1.1rem;
+            padding: 0 0.55rem;
         }
 
         .timeline-photo-group img {
             display: block;
-            width: 190px;
-            height: 126px;
+            width: clamp(190px, 19vw, 270px);
+            height: clamp(128px, 13vw, 178px);
             flex: 0 0 auto;
             object-fit: cover;
-            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.34);
+            border-radius: 15px;
             filter: grayscale(1);
-            opacity: 0.82;
-            box-shadow: 0 5px 18px rgba(20, 24, 34, 0.16);
-            transition: filter 250ms ease, opacity 250ms ease, transform 250ms ease;
+            opacity: 0.78;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+            transition: opacity 250ms ease, transform 250ms ease, border-color 250ms ease;
         }
 
         .timeline-photo-group img:hover {
-            filter: grayscale(1);
             opacity: 1;
-            transform: scale(1.04);
+            border-color: rgba(226, 187, 98, 0.9);
+            transform: translateY(-4px) scale(1.025);
         }
 
         @keyframes timeline-photo-scroll {
@@ -1477,6 +1513,13 @@
         @media (prefers-reduced-motion: reduce) {
             .timeline-photo-track { animation: none; }
             .timeline-photo-strip { overflow-x: auto; }
+        }
+
+        @media (max-width: 600px) {
+            .timeline-photo-strip { padding: 1.2rem 0 1.35rem; margin-top: 1.5rem; }
+            .timeline-photo-group { gap: 0.75rem; }
+            .timeline-photo-group img { width: 175px; height: 118px; border-radius: 12px; }
+            .timeline-photo-heading p { font-size: 0.78rem; }
         }
 
         .timeline::before {
@@ -3901,6 +3944,12 @@
                 </div>
             </div>
             <div class="timeline-photo-strip" aria-label="A moving grayscale strip of photographs from across the site">
+                <div class="timeline-photo-heading">
+                    <span class="eyebrow en">A life in pictures</span>
+                    <span class="eyebrow ar">رحلة في صور</span>
+                    <h3><span class="en">Moments Along the Journey</span><span class="ar">محطات من الرحلة</span></h3>
+                    <p><span class="en">A photographic archive of learning, leadership, and achievement</span><span class="ar">أرشيف مصور للتعلم والقيادة والإنجاز</span></p>
+                </div>
                 <div class="timeline-photo-track" id="timelinePhotoTrack"></div>
             </div>
         </div>
