@@ -1522,6 +1522,14 @@
             .timeline-photo-heading p { font-size: 0.78rem; }
         }
 
+        @media (max-width: 768px) {
+            .timeline-photo-strip { width: calc(100% + 4rem); }
+        }
+
+        @media (max-width: 480px) {
+            .timeline-photo-strip { width: calc(100% + 2rem); }
+        }
+
         .timeline::before {
             content: '';
             position: absolute;
@@ -4611,6 +4619,8 @@
         if (timelinePhotoTrack) {
             const photoSources = [...new Set([...document.querySelectorAll('img[src]')]
                 .filter(img => !img.closest('.timeline-photo-strip'))
+                .filter(img => !/logo/i.test(`${img.alt} ${img.getAttribute('src')}`))
+                .filter(img => !img.closest('.career-icon-wrap, .nav-logo, .loader-logo'))
                 .map(img => img.getAttribute('src'))
                 .filter(src => src && !src.startsWith('data:')) )];
             const makePhotoGroup = (duplicate = false) => {
