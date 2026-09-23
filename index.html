@@ -1419,6 +1419,66 @@
             counter-reset: milestone;
         }
 
+        .timeline-photo-strip {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: hidden;
+            padding: 1rem 0;
+            margin: 1.5rem 0 0;
+            border-top: 1px solid var(--gold-border-h);
+            border-bottom: 1px solid var(--gold-border-h);
+            background: rgba(255, 255, 255, 0.28);
+            -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+        }
+
+        .timeline-photo-track {
+            display: flex;
+            width: max-content;
+            animation: timeline-photo-scroll 70s linear infinite;
+        }
+
+        .timeline-photo-strip:hover .timeline-photo-track {
+            animation-play-state: paused;
+        }
+
+        .timeline-photo-group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-right: 1rem;
+        }
+
+        .timeline-photo-group img {
+            display: block;
+            width: 190px;
+            height: 126px;
+            flex: 0 0 auto;
+            object-fit: cover;
+            border-radius: 12px;
+            filter: grayscale(1);
+            opacity: 0.82;
+            box-shadow: 0 5px 18px rgba(20, 24, 34, 0.16);
+            transition: filter 250ms ease, opacity 250ms ease, transform 250ms ease;
+        }
+
+        .timeline-photo-group img:hover {
+            filter: grayscale(0);
+            opacity: 1;
+            transform: scale(1.04);
+        }
+
+        @keyframes timeline-photo-scroll {
+            to { transform: translateX(-50%); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .timeline-photo-track { animation: none; }
+            .timeline-photo-strip { overflow-x: auto; }
+        }
+
         .timeline::before {
             content: '';
             position: absolute;
@@ -3839,6 +3899,9 @@
                     </div>
                     <div class="tl-empty"></div>
                 </div>
+            </div>
+            <div class="timeline-photo-strip" aria-label="A moving grayscale strip of photographs from across the site">
+                <div class="timeline-photo-track" id="timelinePhotoTrack"></div>
             </div>
         </div>
     </section>
